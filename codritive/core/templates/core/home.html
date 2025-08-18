@@ -1,0 +1,38 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+    <div id="home" class="page active">
+        <div class="container">
+            <div class="content-wrapper">
+                <section class="hero glass">
+                    <div class="hero-image">
+                        <img src="{% static 'images/templatemo-futuristic-girl.jpg' %}" alt="Modern Technology Interaction" />
+                    </div>
+                    <div class="hero-content">
+                        <h1>Welcome to the Future</h1>
+                        <p>Professional IT Training Courses taught by real industry experts.</p>
+                    </div>
+                </section>
+                <section class="services-grid">
+                    <div class="service-card glass">
+                        <h3>Events</h3>
+                        <p>about the event</p>
+                        <li>location</li>
+                        <li>Wireframing & Prototyping</li>
+                        <li>Visual Design & Branding</li>
+                        <li>Responsive Design</li>
+                        <a href="#" class="cta-button">Learn More</a>
+                        <h3>Courses</h3>
+                        <p>about the courses</p>
+                        <li>Web Development</li>
+                        <li>Data Science</li>
+                        <li>Machine Learning</li>
+                        <a href="#" class="cta-button">Learn More</a>
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+    {% endblock %}

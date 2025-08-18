@@ -1,0 +1,276 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+
+{% block title %}{{ courses.title }}{% endblock %}
+
+{% block content %}
+<div>
+    <div class="container">
+            <section class="hero glass">
+                <h1 class="main-title">Title</h1>
+                <div class="hero-image">
+                    <p>Description what we Teach Description what we Teach Description
+                        what we Teach Description what we Teach Description 
+                        what we TeachDescription what we TeachDescription what 
+                        we TeachDescription what we TeachDescription what we TeachDescription
+                        what we TeachDescription what we TeachDescription what we 
+                        TeachDescription what we Teach Description what we Teach
+                        Description what we Teach Description what we Teach
+                        Description what we Teach Description what we Teach
+                        Description what we Teach Description what we Teach 
+                        Description what we Teach Description what we Teach
+                        Description what we Teach Description what we Teach
+                        Description what we Teach Description what we Teach</p>
+                        <img src="{% static 'images/templatemo-futuristic-girl.jpg' %}" style="width: 400px; height: 300px;">
+                    </div>
+                    <button class="cta-button">Enroll Now</button>
+                </section>
+                    <section class="hero glass"> 
+                            <h1 class="main-title">title ( For whom is this )</h1>
+                            <div class="hero-text-wrapper">
+                                <ul>
+                                    <li>
+                                        text text text text text text text
+                                        text text text text text text text
+                                        text text text text text text text
+                                        text text text text text text text text
+                                            text text text text text text text text
+                                            text text text text text text text text
+                                            text text text text text text text text
+                                            text text text text text text text text
+                                    </li>
+                                </ul>
+                            </div>    
+                            <div class="hero-text-wrapper">
+                                <ul>
+                                    <li>
+                                        text text text text text text text
+                                        text text text text text text text
+                                        text text text text text text text
+                                        text text text text text text text text
+                                        text text text bkablbdskajdtext text text text text
+                                        text text text text text text text text
+                                        text text text text text text text text
+                                        text text text text text text text text
+    
+                                    </li>
+                                </ul>
+                            </div>
+                        
+                    
+                    <button class="cta-button">Enroll Now</button>
+                </section>
+                <section class="hero glass"> 
+                    <h1 class="main-title">title (Why Python)</h1>
+                    <ul>
+                        <li>
+                            .text text text text text text 
+                            text text text text text text 
+                            text text text text text text
+                            .text text text text text text 
+                            text text text text text text 
+                            text text text text text text .text text text text text text 
+                            text text text text text text 
+                            text text text text text text .text text text text text text 
+                            text text text text text text 
+                            text text text text text text .text text text text text text 
+                            text text text text text text 
+                            text text text text text text 
+                            text text text text text text 
+                        </li>
+                    </ul>
+                </section> 
+                <section class="hero glass">
+                    <h1>
+                        Curriculum
+                    </h1>
+                    <ul>
+                        <li>
+                            .curriculum
+                        </li>
+                        <li>
+                            .curriculum
+                        </li>
+                        <li>
+                            .curriculum
+                        </li>
+                        <li>
+                            .curriculum
+                        </li>
+                        <li>
+                            .curriculum
+                        </li>
+                        <li>
+                            .curriculum
+                        </li>
+                    </ul>
+                </section>
+                <section class="hero glass">
+                    <h1 class="main-title">title (Who is the tutor)</h1>
+                    <div class="hero-image">
+                        <img src="{% static 'images/templatemo-futuristic' %}" style="width: 400px; height: 300px;">
+                    </div>
+                    <div class="divik">
+                        <ul>
+                            <li>
+                               informations about the tutorkjsdfbhjksdbf fjdsbjhbds jb dam bahg adj gkjd gkadf 
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            <section class="hero glass">
+                <h1>FAQ</h1>
+                    <div class="glass">
+                        <div class="faq-question">
+                                <ul>
+                                    <li>
+                                        What services do you provide? What services do you provide? What services do you provide?
+                                    </li>
+                                </ul>
+                            <span class="icon" style="font-size: 40px; color:#FD7400">▼</span>
+                        </div>
+                        <div class="faq-answer" style="background-color:#FD7400">
+                            <ul>
+                                <li>
+                                    We provide software development, IT consulting, and cloud solutions.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="glass">
+                        <div class="faq-question">
+                                <ul>
+                                    <li>
+                                        What services do you provide?
+                                    </li>
+                                </ul>
+                            <span class="icon" style="font-size: 40px; color:#008000">▼</span>
+                        </div>
+                        <div class="faq-answer" style="color:#008000">
+                            <ul>
+                                <li>
+                                    We provide software development, IT consulting, and cloud solutions.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="glass">
+                        <div class="faq-question">
+                            <ul>
+                                <li>
+                                   What services do you provide?
+                                </li>
+                            </ul>
+                            <span class="icon" style="font-size: 40px; color:#33C0CB">▼</span>
+                        </div>
+                        <div class="faq-answer" style="background-color:#33C0CB">
+                            <ul>
+                                <li>
+                                    We provide software development, IT consulting, and cloud solutions.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+            </section>
+            <!-- #*/ dnel Karusel/* -->
+            <section class="services-grid"> 
+                    {% for course in courses %}
+                    <a href="{% url 'lessons:trainings' %}" class="service-card-link">
+                        <div class="service-card glass">
+                            <h3>{{ course.title }}</h3>
+                            <p>{{ course.category }}</p>
+                            {% if course.image %}
+                                <img src="{{ course.image.url }}" alt="{{ course.title }}" class="course-image" style="height: 160px;">
+                            {% endif %}
+                            <li>{{ course.short_description }}</li>
+                           
+                        </div>
+                    </a>
+                    {% endfor %}
+                </section>
+            </div>
+        </div>
+        <style>
+            .faq-container {
+                max-width: 800px;
+                margin: 20px auto;
+                font-family: Arial, sans-serif;
+            }
+            .faq-item {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                border-bottom: 1px solid #008000;
+                padding: 15px 0;
+            }
+            .faq-question {
+                max-height: 100px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+                font-weight: bold;
+                font-size: 1.1em;
+                margin: 0;
+                padding: 15px;
+            }
+            .faq-answer {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 1s ease;
+                color: white;
+                background: #008000;
+                padding: 0 15px;
+            }
+
+            .faq-answer.show {
+                max-height: 70px;
+                padding: 15px;
+            }
+            .icon {
+                color: #008000;
+                font-size: 1.3em;
+                transition: transform 0.3s ease;
+            }
+            .rotate {
+                transform: rotate(180deg);
+            }
+            ul {
+                list-style: none; 
+                padding: 0; 
+                margin: 0;    
+                }
+
+            ul li {
+            color: white;  
+            margin: 14px 0;
+            font-size: 14px;
+            }
+            .hero-text {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            .divik ul {
+                float: right;
+                
+            }
+        </style>
+        <script>
+           document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const arrow = question.querySelector('.arrow');
+                    answer.classList.toggle('show');
+                    arrow.classList.toggle('rotate');
+                });
+            });
+        </script>
+{% endblock %}
+                

@@ -1,0 +1,37 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}Training Courses{% endblock %}
+
+{% block content %}
+ <div>
+        <div class="container">
+            <div class="content-wrapper">
+                <section class="hero glass">
+                    <div class="hero-image">
+                        <img src="{% static 'images/templatemo-futuristic-girl.jpg' %}" alt="Modern Technology Interaction" />
+                    </div>
+                    <h1>Our Training Courses</h1>
+                    <p>Explore our comprehensive IT training programs designed to equip you with the skills needed for the future.</p>
+                </section>
+                
+                <section class="services-grid">
+                    {% for course in courses %}
+                    <a href="{% url 'lessons:trainings' %}" class="service-card-link">
+                        <div class="service-card glass">
+                            <h3>{{ course.title }}</h3>
+                            <p>{{ course.category }}</p>
+                            {% if course.image %}
+                                <img src="{{ course.image.url }}" alt="{{ course.title }}" class="course-image" style="height: 160px;">
+                            {% endif %}
+                            <li>{{ course.short_description }}</li>
+                            <li>Wireframing & Prototyping</li>
+                            <li>Visual Design & Branding</li>
+                            <li>Responsive Design</li>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </section>
+            </div>
+        </div>
+    </div>
+{% endblock %}
