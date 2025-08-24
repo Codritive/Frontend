@@ -8,22 +8,19 @@
 <div>
     <div class="container">
             <section class="hero glass">
-                <h1 class="main-title">Title</h1>
+                <h1 class="main-title">{{ course.title }}</h1>
                 <div class="hero-image">
-                    <p>Unlock the power of web development with our comprehensive JavaScript course,
-                         designed for beginners, aspiring developers, and those looking to level up 
-                         their coding skills. JavaScript is the backbone of modern web applications,
-                          enabling interactive, dynamic, and responsive user experiences. This course 
-                          covers everything from the fundamentals of variables, data types, loops, and 
-                          functions, to advanced topics like asynchronous programming, Promises, API integration,
-                           and modern ES6+ features.
-                           By the end of this course, you will not only understand the core
-                            principles of JavaScript but also have the confidence to implement
-                             them in frontend and backend development, creating seamless, efficient,
-                              and scalable solutions. Whether your goal is to become a frontend developer,
-                              
-.</p>
-                        <img src="{% static 'images/templatemo-futuristic-girl.jpg' %}" style="width: 400px; height: 300px;">
+
+                    <p>{{ course.full_description }}</p>
+                    {% if course.image %}
+                        <img src="{{ course.image.url }}" style="width: 400px; height: 300px;">
+                    {% endif %}
+
+                    <p>{{ course.full_description }}</p>
+                    {% if course.image %}
+                        <img src="{{ course.image.url }}" style="width: 400px; height: 300px;">
+                    {% endif %}
+
                     </div>
                     <button class="cta-button">Enroll Now</button>
                 </section>
@@ -108,14 +105,24 @@
                     </ul>
                 </section>
                 <section class="hero glass">
-                    <h1 class="main-title">title (Who is the tutor)</h1>
+                    <h2 class="main-title">{{ course.tutor.name }}</h2>
                     <div class="hero-image">
-                        <img src="{% static 'images/templatemo-futuristic' %}" style="width: 400px; height: 300px;">
+                        <img src="{{ course.tutor.image.url }}" style="width: 300px; height: 300px;">
                     </div>
                     <div class="divik">
+                        <ul>
+                            <li>
+                               {{ course.tutor.bio}} 
+                            </li>
+                        </ul>
+
                         
-<p>informations Rne about the tutorkjsdfbhjksdbf fjdsbjhbds jb dam bahg adj gkjd gkadf</p> 
-                          
+                        <ul>
+                            <li>
+                               {{ course.tutor.bio}} 
+                            </li>
+                        </ul>  
+
                     </div>
                 </section>
             <section class="hero glass">

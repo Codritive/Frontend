@@ -23,3 +23,4 @@ class CourseAdmin(admin.ModelAdmin):
         return super().formfield_for_foreignkey(db_field, request, **kwargs)
 
 admin.site.register(Course, CourseAdmin)
+# Register your models here.
