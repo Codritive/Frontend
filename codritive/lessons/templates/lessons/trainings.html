@@ -98,14 +98,14 @@
                     </ul>
                 </section>
                 <section class="hero glass">
-                    <h2 class="main-title">{{ course.tutor }}</h2>
+                    <h2 class="main-title">{{ course.tutor.name }}</h2>
                     <div class="hero-image">
-                        <img src="{% static 'images/templatemo-futuristic' %}" style="width: 400px; height: 300px;">
+                        <img src="{{ course.tutor.image.url }}" style="width: 300px; height: 300px;">
                     </div>
                     <div class="divik">
                         <ul>
                             <li>
-                               informations about the tutorkjsdfbhjksdbf fjdsbjhbds jb dam bahg adj gkjd gkadf 
+                               {{ course.tutor.bio}} 
                             </li>
                         </ul>
                     </div>
