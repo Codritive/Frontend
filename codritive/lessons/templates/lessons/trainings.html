@@ -15,12 +15,6 @@
                     {% if course.image %}
                         <img src="{{ course.image.url }}" style="width: 400px; height: 300px;">
                     {% endif %}
-
-                    <p>{{ course.full_description }}</p>
-                    {% if course.image %}
-                        <img src="{{ course.image.url }}" style="width: 400px; height: 300px;">
-                    {% endif %}
-
                     </div>
                     <button class="cta-button">Enroll Now</button>
                 </section>
@@ -110,19 +104,9 @@
                         <img src="{{ course.tutor.image.url }}" style="width: 300px; height: 300px;">
                     </div>
                     <div class="divik">
-                        <ul>
-                            <li>
-                               {{ course.tutor.bio}} 
-                            </li>
-                        </ul>
-
-                        
-                        <ul>
-                            <li>
-                               {{ course.tutor.bio}} 
-                            </li>
-                        </ul>  
-
+                        <p>
+                            {{ course.tutor.bio}} 
+                        </p>
                     </div>
                 </section>
             <section class="hero glass">
