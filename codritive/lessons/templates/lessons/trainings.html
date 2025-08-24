@@ -8,21 +8,12 @@
 <div>
     <div class="container">
             <section class="hero glass">
-                <h1 class="main-title">Title</h1>
+                <h1 class="main-title">{{ course.title }}</h1>
                 <div class="hero-image">
-                    <p>Description what we Teach Description what we Teach Description
-                        what we Teach Description what we Teach Description 
-                        what we TeachDescription what we TeachDescription what 
-                        we TeachDescription what we TeachDescription what we TeachDescription
-                        what we TeachDescription what we TeachDescription what we 
-                        TeachDescription what we Teach Description what we Teach
-                        Description what we Teach Description what we Teach
-                        Description what we Teach Description what we Teach
-                        Description what we Teach Description what we Teach 
-                        Description what we Teach Description what we Teach
-                        Description what we Teach Description what we Teach
-                        Description what we Teach Description what we Teach</p>
-                        <img src="{% static 'images/templatemo-futuristic-girl.jpg' %}" style="width: 400px; height: 300px;">
+                    <p>{{ course.full_description }}</p>
+                    {% if course.image %}
+                        <img src="{{ course.image.url }}" style="width: 400px; height: 300px;">
+                    {% endif %}
                     </div>
                     <button class="cta-button">Enroll Now</button>
                 </section>
@@ -107,7 +98,7 @@
                     </ul>
                 </section>
                 <section class="hero glass">
-                    <h1 class="main-title">title (Who is the tutor)</h1>
+                    <h2 class="main-title">{{ course.tutor }}</h2>
                     <div class="hero-image">
                         <img src="{% static 'images/templatemo-futuristic' %}" style="width: 400px; height: 300px;">
                     </div>

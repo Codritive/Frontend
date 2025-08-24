@@ -1,16 +1,17 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Course, FAQ
 # Create your views here.
 
 
-def training(request):
+def courses_list(request):
     courses = Course.objects.all()
-    return render(request, 'lessons/trainings.html', {
+    return render(request, 'core/training.html', {
         'courses': courses
-    })
+        })
 
-def faq(request):
-    faqs = FAQ.objects.all()
-    return render(request, 'lessons/faq.html', {
-        'faqs': faqs
-    })
+def course_detail(request, pk):
+    course = get_object_or_404(Course, pk=pk)
+    return render(request, 'lessons/trainings.html', {
+        'course': course
+        })
+    
