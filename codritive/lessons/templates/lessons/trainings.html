@@ -10,23 +10,24 @@
             <section class="hero glass">
                 <h1 class="main-title">Title</h1>
                 <div class="hero-image">
-                    <p>Description what we Teach Description what we Teach Description
-                        what we Teach Description what we Teach Description 
-                        what we TeachDescription what we TeachDescription what 
-                        we TeachDescription what we TeachDescription what we TeachDescription
-                        what we TeachDescription what we TeachDescription what we 
-                        TeachDescription what we Teach Description what we Teach
-                        Description what we Teach Description what we Teach
-                        Description what we Teach Description what we Teach
-                        Description what we Teach Description what we Teach 
-                        Description what we Teach Description what we Teach
-                        Description what we Teach Description what we Teach
-                        Description what we Teach Description what we Teach</p>
+                    <p>Unlock the power of web development with our comprehensive JavaScript course,
+                         designed for beginners, aspiring developers, and those looking to level up 
+                         their coding skills. JavaScript is the backbone of modern web applications,
+                          enabling interactive, dynamic, and responsive user experiences. This course 
+                          covers everything from the fundamentals of variables, data types, loops, and 
+                          functions, to advanced topics like asynchronous programming, Promises, API integration,
+                           and modern ES6+ features.
+                           By the end of this course, you will not only understand the core
+                            principles of JavaScript but also have the confidence to implement
+                             them in frontend and backend development, creating seamless, efficient,
+                              and scalable solutions. Whether your goal is to become a frontend developer,
+                              
+.</p>
                         <img src="{% static 'images/templatemo-futuristic-girl.jpg' %}" style="width: 400px; height: 300px;">
                     </div>
                     <button class="cta-button">Enroll Now</button>
                 </section>
-                    <section class="hero glass"> 
+                    <section class="hero glass">
                             <h1 class="main-title">title ( For whom is this )</h1>
                             <div class="hero-text-wrapper">
                                 <ul>
@@ -41,7 +42,7 @@
                                             text text text text text text text text
                                     </li>
                                 </ul>
-                            </div>    
+                            </div>
                             <div class="hero-text-wrapper">
                                 <ul>
                                     <li>
@@ -53,34 +54,34 @@
                                         text text text text text text text text
                                         text text text text text text text text
                                         text text text text text text text text
-    
+
                                     </li>
                                 </ul>
                             </div>
-                        
-                    
+
+
                     <button class="cta-button">Enroll Now</button>
                 </section>
-                <section class="hero glass"> 
+                <section class="hero glass">
                     <h1 class="main-title">title (Why Python)</h1>
                     <ul>
                         <li>
-                            .text text text text text text 
-                            text text text text text text 
+                            .text text text text text text
                             text text text text text text
-                            .text text text text text text 
-                            text text text text text text 
-                            text text text text text text .text text text text text text 
-                            text text text text text text 
-                            text text text text text text .text text text text text text 
-                            text text text text text text 
-                            text text text text text text .text text text text text text 
-                            text text text text text text 
-                            text text text text text text 
-                            text text text text text text 
+                            text text text text text text
+                            .text text text text text text
+                            text text text text text text
+                            text text text text text text .text text text text text text
+                            text text text text text text
+                            text text text text text text .text text text text text text
+                            text text text text text text
+                            text text text text text text .text text text text text text
+                            text text text text text text
+                            text text text text text text
+                            text text text text text text
                         </li>
                     </ul>
-                </section> 
+                </section>
                 <section class="hero glass">
                     <h1>
                         Curriculum
@@ -112,11 +113,9 @@
                         <img src="{% static 'images/templatemo-futuristic' %}" style="width: 400px; height: 300px;">
                     </div>
                     <div class="divik">
-                        <ul>
-                            <li>
-                               informations about the tutorkjsdfbhjksdbf fjdsbjhbds jb dam bahg adj gkjd gkadf 
-                            </li>
-                        </ul>
+                        
+<p>informations Rne about the tutorkjsdfbhjksdbf fjdsbjhbds jb dam bahg adj gkjd gkadf</p> 
+                          
                     </div>
                 </section>
             <section class="hero glass">
@@ -159,7 +158,7 @@
                         <div class="faq-question">
                             <ul>
                                 <li>
-                                   What services do you provide?
+What services do you provide?
                                 </li>
                             </ul>
                             <span class="icon" style="font-size: 40px; color:#33C0CB">▼</span>
@@ -174,23 +173,41 @@
                     </div>
             </section>
             <!-- #*/ dnel Karusel/* -->
-            <section class="services-grid"> 
-                    {% for course in courses %}
-                    <a href="{% url 'lessons:trainings' %}" class="service-card-link">
-                        <div class="service-card glass">
-                            <h3>{{ course.title }}</h3>
-                            <p>{{ course.category }}</p>
-                            {% if course.image %}
-                                <img src="{{ course.image.url }}" alt="{{ course.title }}" class="course-image" style="height: 160px;">
-                            {% endif %}
-                            <li>{{ course.short_description }}</li>
-                           
+            <section class="services-grid">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        {% for course in courses %}
+                        <div class="swiper-slide">
+                            <a href="{% url 'lessons:trainings' %}" class="service-card-link">
+                                <div class="service-card glass">
+                                    <h3>{{ course.title }}</h3>
+                                    <p>{{ course.category }}</p>
+                                    {% if course.image %}
+                                        <img src="{{ course.image.url }}" alt="{{ course.title }}" class="course-image" style="height: 160px;">
+                                    {% endif %}
+                                    <li>{{ course.short_description }}</li>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                    {% endfor %}
-                </section>
+                        {% endfor %}
+                    </div>
+
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
+            <!-- End Carousel -->
             </div>
         </div>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+        />
+        <!-- karuseli logik JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
         <style>
             .faq-container {
                 max-width: 800px;
@@ -237,13 +254,13 @@
                 transform: rotate(180deg);
             }
             ul {
-                list-style: none; 
-                padding: 0; 
-                margin: 0;    
+                list-style: none;
+                padding: 0;
+                margin: 0;
                 }
 
             ul li {
-            color: white;  
+            color: white;
             margin: 14px 0;
             font-size: 14px;
             }
@@ -257,20 +274,47 @@
                 gap: 20px;
                 text-align: center;
             }
-            .divik ul {
+            .divik  {
                 float: right;
-                
             }
+
+            /* karuseli mas*/
+            .swiper { width: 100%; padding: 40px 0; }
+            .swiper-slide { display: flex; justify-content: center; }
+            .swiper-button-next, .swiper-button-prev { color: #FD7400; }
+            .swiper-pagination-bullet-active { background: #FD7400; }
         </style>
         <script>
-           document.querySelectorAll('.faq-question').forEach(question => {
+document.querySelectorAll('.faq-question').forEach(question => {
                 question.addEventListener('click', () => {
                     const answer = question.nextElementSibling;
                     const arrow = question.querySelector('.arrow');
                     answer.classList.toggle('show');
-                    arrow.classList.toggle('rotate');
+                    if(arrow){ arrow.classList.toggle('rotate'); }
                 });
             });
+
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      1024: { slidesPerView: 3 },
+      768: { slidesPerView: 2 },
+      480: { slidesPerView: 1 },
+    },
+});
         </script>
 {% endblock %}
-                
