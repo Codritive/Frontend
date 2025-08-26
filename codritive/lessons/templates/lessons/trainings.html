@@ -168,19 +168,19 @@ What services do you provide?
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         {% for course in courses %}
-                        <div class="swiper-slide">
-                            <a href="{% url 'lessons:trainings' %}" class="service-card-link">
-                                <div class="service-card glass">
-                                    <h3>{{ course.title }}</h3>
-                                    <p>{{ course.category }}</p>
-                                    {% if course.image %}
-                                        <img src="{{ course.image.url }}" alt="{{ course.title }}" class="course-image" style="height: 160px;">
-                                    {% endif %}
-                                    <li>{{ course.short_description }}</li>
-                                </div>
-                            </a>
-                        </div>
-                        {% endfor %}
+                            <div class="swiper-slide">
+                                <a href="{% url 'lessons:trainings' %}" class="service-card-link">
+                                    <div class="service-card glass">
+                                        <h3>{{ course.title }}</h3>
+                                        <p>{{ course.category }}</p>
+                                        {% if course.image %}
+                                            <img src="{{ course.image.url }}" alt="{{ course.title }}" class="course-image" style="height: 160px;">
+                                        {% endif %}
+                                        <li>{{ course.short_description }}</li>
+                                    </div>
+                                </a>
+                            </div>
+                            {% endfor %}
                     </div>
 
                     <div class="swiper-button-next"></div>
