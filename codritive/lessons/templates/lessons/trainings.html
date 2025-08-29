@@ -111,57 +111,25 @@
                 </section>
             <section class="hero glass">
                 <h1>FAQ</h1>
-                    <div class="glass">
-                        <div class="faq-question">
+                {% for course in faqs %}
+                        <div class="glass">
+                            <div class="faq-question">
+                                    <ul>
+                                        <li>
+                                            {{ course.question }}
+                                        </li>
+                                    </ul>
+                                <span class="icon" style="font-size: 40px; color:#FD7400">▼</span>
+                            </div>
+                            <div class="faq-answer" style="background-color:#FD7400">
                                 <ul>
                                     <li>
-                                        What services do you provide? What services do you provide? What services do you provide?
+                                        {{ course.answer }}
                                     </li>
                                 </ul>
-                            <span class="icon" style="font-size: 40px; color:#FD7400">▼</span>
+                            </div>
+                            {% endfor %}
                         </div>
-                        <div class="faq-answer" style="background-color:#FD7400">
-                            <ul>
-                                <li>
-                                    We provide software development, IT consulting, and cloud solutions.</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="glass">
-                        <div class="faq-question">
-                                <ul>
-                                    <li>
-                                        What services do you provide?
-                                    </li>
-                                </ul>
-                            <span class="icon" style="font-size: 40px; color:#008000">▼</span>
-                        </div>
-                        <div class="faq-answer" style="color:#008000">
-                            <ul>
-                                <li>
-                                    We provide software development, IT consulting, and cloud solutions.</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="glass">
-                        <div class="faq-question">
-                            <ul>
-                                <li>
-What services do you provide?
-                                </li>
-                            </ul>
-                            <span class="icon" style="font-size: 40px; color:#33C0CB">▼</span>
-                        </div>
-                        <div class="faq-answer" style="background-color:#33C0CB">
-                            <ul>
-                                <li>
-                                    We provide software development, IT consulting, and cloud solutions.</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
             </section>
             <!-- #*/ dnel Karusel/* -->
             <section class="services-grid">

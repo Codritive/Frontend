@@ -30,6 +30,7 @@ class Course(models.Model):
         verbose_name_plural = "Courses"
 
 class FAQ(models.Model):
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='faqs')
     question = models.CharField(max_length=255)
     answer = models.TextField()
 

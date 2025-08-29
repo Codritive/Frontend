@@ -12,8 +12,10 @@ def courses_list(request):
 def course_detail(request, pk):
     course = get_object_or_404(Course, pk=pk)
     courses = Course.objects.all()
+    faqs = FAQ.objects.filter(course=course)
     return render(request, 'lessons/trainings.html', {
         'course': course,
-        'courses': courses
+        'courses': courses,
+        'faqs': faqs
         })
     
