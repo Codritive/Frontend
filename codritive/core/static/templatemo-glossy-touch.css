@@ -16,6 +16,7 @@ https://templatemo.com/tm-592-glossy-touch
         font-size: 16px;
     }
 }
+
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(
@@ -27,9 +28,13 @@ body {
         #533a7d 70%,
         #8b5a8c 85%,
         #a0616a 100%
-    );
+        );
+    background-color: transparent; /* Or try #000, #111, etc. */
+    background-color:#656d68d3;
+    background-image: none;
     min-height: 100vh;
     overflow-x: hidden;
+    overflow: scroll;
 }
 /* Animated background elements */
 .bg-shapes {
@@ -40,6 +45,8 @@ body {
     height: 100%;
     z-index: -1;
     overflow: hidden;
+    min-height: 100%;
+    background-color: transparent; /* Change this to your desired background */
 }
 .shape {
     position: absolute;
@@ -201,7 +208,7 @@ body {
 }
 
 .glass:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: #656d6834;
     transform: translateY(-5px);
     box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
 }
@@ -288,13 +295,19 @@ nav {
     min-height: calc(100vh - 300px);
 }
 /* Home page styles */
+
 .hero {
+    position: relative;
     align-items: center;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Push content to the top */
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     margin-bottom: 40px;
     padding: 60px 40px;
+    align-items: flex-start;         /* Center horizontally */
+    padding-top: 20px;           /* Space from the very top */
 }
 .hero-image {
     align-items: center;
@@ -471,6 +484,14 @@ ul li {
     backdrop-filter: blur(10px);
     border: 3px solid rgba(255, 255, 255, 0.3);
     transition: all 0.3s ease;
+}
+.team-avatar-img {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 160px;
+    height: 160px;
+    border: 2px solid #fff; /* optional: adds a white border */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* optional: subtle shadow */
 }
 .team-member:hover .team-avatar {
     border-color: rgba(255, 255, 255, 0.5);
@@ -749,6 +770,85 @@ ul li {
 .text-color-white {
     color: white;
 }
+.main-title {
+    margin-top: -10;
+}
+.faq-container {
+    max-width: 600px;
+    margin: auto;
+    background: #000000;
+    padding: 20px;
+    border-radius: 8px;
+}
+.faq-item {
+    border-bottom: 1px solid #020101;
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 15px 0;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faq-question .icon {
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active .icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    color: #ffffff;
+}
+
+.faq-answer p {
+    padding: 10px 0;
+}
+/* carusel design */
+.carousel {
+    position: relative;
+    overflow: hidden;
+}
+    .carousel-slide {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    transition: opacity 0.5s;
+}
+.carousel-slide.active {
+    display: flex;
+}
+.carousel img {
+    max-width: 100%;
+    height: auto;
+}
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.3);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    padding: 0 10px;
+    cursor: pointer;
+    z-index: 2;
+}
+.carousel-control.prev { left: 10px; }
+.carousel-control.next { right: 10px; }
 /* Responsive design */
 @media (max-width: 1024px) {
     .team-grid {
