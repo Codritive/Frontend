@@ -43,10 +43,17 @@ body {
 }
 .shape {
     position: absolute;
-    background: rgb(72, 255, 0);
     animation: float 6s ease-in-out infinite;
-    box-shadow: 0 8px 32px rgb(255, 0, 0);
+    width: 0;
+    height: 0;
+    background: none;
+    animation: float 6s ease-in-out infinite;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-bottom: 100px solid rgba(245, 247, 246, 0.904); /* triangle color */
+    box-shadow: none; /* optional: remove shadow or add custom */
 }
+
 
 .shape:nth-child(1) {
     width: 120px;
@@ -66,6 +73,7 @@ body {
     right: 15%;
     animation-delay: 2s;
     transform: rotate(-20deg);
+    border-bottom: 100px solid #7ED956; /* green */
 }
 .shape:nth-child(3) {
     width: 100px;
@@ -75,6 +83,7 @@ body {
     left: 20%;
     animation-delay: 4s;
     transform: rotate(25deg);
+    border-bottom: 100px solid #7ED956; /* green */
 }
 .shape:nth-child(4) {
     width: 80px;
@@ -94,16 +103,78 @@ body {
     right: 20%;
     animation-delay: 3s;
     transform: rotate(30deg);
+    border-bottom: 100px solid #33C0CB;
 }
 .shape:nth-child(6) {
     width: 95px;
     height: 95px;
     border-radius: 20px;
+    top: 33%;
+    left: 5%;
+    animation-delay: 5s;
+    transform: rotate(-15deg);
+    border-bottom: 100px solid #33C0CB;
+
+}
+.shape:nth-child(7) {
+    width: 5px;
+    height: 60px;
+    border-radius: 33px;
     top: 40%;
     left: 5%;
     animation-delay: 5s;
     transform: rotate(-15deg);
-
+    border-bottom: 100px solid #FD7400; /* red */
+}
+.shape:nth-child(8) {
+    width: 20px;
+    height: 50px;
+    border-radius: 45px;
+    top: 15%;
+    left: 5%;
+    animation-delay: 5s;
+    transform: rotate(-15deg);
+    border-bottom: 100px solid #7ED956; /* green */
+}
+.shape:nth-child(9) {
+    width: 30px;
+    height: 40px;
+    border-radius: 50px;
+    top: 45%;
+    left: 5%;
+    animation-delay: 5s;
+    transform: rotate(-15deg);
+    border-bottom: 100px solid #7ED956; /* yellow */
+}
+.shape:nth-child(10) {
+    width: 40px;
+    height: 30px;
+    border-radius: 30px;
+    top: 35%;
+    left: 5%;
+    animation-delay: 5s;
+    transform: rotate(-15deg);
+    border-bottom: 100px solid #FD7400; /* blue */
+}
+.shape:nth-child(11) {
+    width: 50px;
+    height: 20px;
+    border-radius: 35px;
+    top: 10%;
+    left: 5%;
+    animation-delay: 5s;
+    transform: rotate(-15deg);
+    border-bottom: 100px solid #33C0CB; /* pink */
+}
+.shape:nth-child(12) {
+    width: 60px;
+    height: 10px;
+    border-radius: 40px;
+    top: 30%;
+    left: 5%;
+    animation-delay: 5s;
+    transform: rotate(-15deg);
+    border-bottom: 100px solid #33C0CB; ; /* dark blue */
 }
 
 @keyframes float {
@@ -118,7 +189,8 @@ body {
 }
 /* Glass container styles */
 .glass {
-    background: rgba(255, 255, 255, 0.15);
+    background: #034D28;
+    
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
@@ -127,6 +199,7 @@ body {
     position: relative;
     overflow: hidden;
 }
+
 .glass:hover {
     background: rgba(255, 255, 255, 0.2);
     transform: translateY(-5px);
