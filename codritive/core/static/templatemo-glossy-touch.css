@@ -849,6 +849,9 @@ ul li {
 }
 .carousel-control.prev { left: 10px; }
 .carousel-control.next { right: 10px; }
+li {
+            margin-bottom: 5px;
+        }
 /* Responsive design */
 @media (max-width: 1024px) {
     .team-grid {
