@@ -47,6 +47,7 @@ body {
     animation: float 6s ease-in-out infinite;
     box-shadow: 0 8px 32px rgb(255, 0, 0);
 }
+
 .shape:nth-child(1) {
     width: 120px;
     height: 80px;
@@ -55,6 +56,7 @@ body {
     left: 10%;
     animation-delay: 0s;
     transform: rotate(15deg);
+    border-bottom: 100px solid #FD7400;
 }
 .shape:nth-child(2) {
     width: 90px;
@@ -82,6 +84,7 @@ body {
     right: 30%;
     animation-delay: 1s;
     transform: rotate(-10deg);
+    border-bottom: 100px solid #FD7400; 
 }
 .shape:nth-child(5) {
     width: 110px;
@@ -153,7 +156,13 @@ nav {
     align-items: center;
     gap: 15px;
     cursor: pointer;
+    height: 40px; /* Adjust height as needed */
+    width: auto; /* Maintain aspect ratio */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 .logo-icon {
     width: 64px;
     height: 64px;
