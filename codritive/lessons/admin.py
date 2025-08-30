@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Course
+from .models import Course, FAQ
 from core.models import Our_Team
 
 class CourseAdmin(admin.ModelAdmin):
@@ -24,3 +24,4 @@ class CourseAdmin(admin.ModelAdmin):
 
 admin.site.register(Course, CourseAdmin)
 # Register your models here.
+admin.site.register(FAQ)

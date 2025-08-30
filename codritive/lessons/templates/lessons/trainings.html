@@ -13,65 +13,51 @@
 
                     <p>{{ course.full_description }}</p>
                     {% if course.image %}
-                        <img src="{{ course.image.url }}" style="width: 400px; height: 300px;">
+                    <img src="{{ course.image.url }}" style="width: 400px; height: 300px;">
                     {% endif %}
+                </div>
+                <div>
+                    <div class="cta-element" style=" margin-left: 20px;">
+                        {{ course.lesson_duration_month }} ամիս 
                     </div>
-                    <button class="cta-button">Enroll Now</button>
+                    <div class="cta-element" style=" margin-left: 20px;">
+                        Շաբաթը {{ course.weekly_lessons }} օր
+                    </div>
+                    <div class="cta-element" style=" margin-left: 20px;">
+                        {{ course.lesson_duration_minutes }} րոպե
+                    </div>
+                    <div class="cta-element" style=" margin-left: 20px;">
+                        {{ course.price }} դրամ
+                        
+                    </div>
+                    <button class="cta-button" style="margin-left: 150px">Enroll Now</button>
+                </div>
+                    
+                    
                 </section>
                     <section class="hero glass">
                             <h1 class="main-title">title ( For whom is this )</h1>
                             <div class="hero-text-wrapper">
-                                <ul>
-                                    <li>
-                                        text text text text text text text
-                                        text text text text text text text
-                                        text text text text text text text
-                                        text text text text text text text text
-                                            text text text text text text text text
-                                            text text text text text text text text
-                                            text text text text text text text text
-                                            text text text text text text text text
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="hero-text-wrapper">
-                                <ul>
-                                    <li>
-                                        text text text text text text text
-                                        text text text text text text text
-                                        text text text text text text text
-                                        text text text text text text text text
-                                        text text text bkablbdskajdtext text text text text
-                                        text text text text text text text text
-                                        text text text text text text text text
-                                        text text text text text text text text
+                                <div class="hero-text-wrapper">
+                                    <p>
+                                        {{ course.for_whom }}
 
-                                    </li>
-                                </ul>
+                                    </p>
+                                  
+                                </div>
                             </div>
+                           
 
 
                     <button class="cta-button">Enroll Now</button>
                 </section>
                 <section class="hero glass">
                     <h1 class="main-title">title (Why Python)</h1>
-                    <ul>
-                        <li>
-                            .text text text text text text
-                            text text text text text text
-                            text text text text text text
-                            .text text text text text text
-                            text text text text text text
-                            text text text text text text .text text text text text text
-                            text text text text text text
-                            text text text text text text .text text text text text text
-                            text text text text text text
-                            text text text text text text .text text text text text text
-                            text text text text text text
-                            text text text text text text
-                            text text text text text text
-                        </li>
-                    </ul>
+                    <p>
+                        {{ course.why_this_course }}
+                    </p>
+                    <button class="cta-button">Enroll Now</button>
+                    
                 </section>
                 <section class="hero glass">
                     <h1>
@@ -79,27 +65,14 @@
                     </h1>
                     <ul>
                         <li>
-                            .curriculum
-                        </li>
-                        <li>
-                            .curriculum
-                        </li>
-                        <li>
-                            .curriculum
-                        </li>
-                        <li>
-                            .curriculum
-                        </li>
-                        <li>
-                            .curriculum
-                        </li>
-                        <li>
-                            .curriculum
+                            {{ course.curriculum }}
                         </li>
                     </ul>
+                    <button class="cta-button">Enroll Now</button>
+
                 </section>
                 <section class="hero glass">
-                    <h2 class="main-title">{{ course.tutor.name }}</h2>
+                    <h2 class="text-color-white">{{ course.tutor.name }}</h2>
                     <div class="hero-image">
                         <img src="{{ course.tutor.image.url }}" style="width: 300px; height: 300px;">
                     </div>
@@ -111,57 +84,25 @@
                 </section>
             <section class="hero glass">
                 <h1>FAQ</h1>
-                    <div class="glass">
-                        <div class="faq-question">
+                {% for course in faqs %}
+                        <div class="glass">
+                            <div class="faq-question">
+                                    <ul>
+                                        <li>
+                                            {{ course.question }}
+                                        </li>
+                                    </ul>
+                                <span class="icon" style="font-size: 40px; color:#FD7400">▼</span>
+                            </div>
+                            <div class="faq-answer" style="background-color:#FD7400">
                                 <ul>
                                     <li>
-                                        What services do you provide? What services do you provide? What services do you provide?
+                                        {{ course.answer }}
                                     </li>
                                 </ul>
-                            <span class="icon" style="font-size: 40px; color:#FD7400">▼</span>
+                            </div>
+                            {% endfor %}
                         </div>
-                        <div class="faq-answer" style="background-color:#FD7400">
-                            <ul>
-                                <li>
-                                    We provide software development, IT consulting, and cloud solutions.</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="glass">
-                        <div class="faq-question">
-                                <ul>
-                                    <li>
-                                        What services do you provide?
-                                    </li>
-                                </ul>
-                            <span class="icon" style="font-size: 40px; color:#008000">▼</span>
-                        </div>
-                        <div class="faq-answer" style="color:#008000">
-                            <ul>
-                                <li>
-                                    We provide software development, IT consulting, and cloud solutions.</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="glass">
-                        <div class="faq-question">
-                            <ul>
-                                <li>
-What services do you provide?
-                                </li>
-                            </ul>
-                            <span class="icon" style="font-size: 40px; color:#33C0CB">▼</span>
-                        </div>
-                        <div class="faq-answer" style="background-color:#33C0CB">
-                            <ul>
-                                <li>
-                                    We provide software development, IT consulting, and cloud solutions.</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
             </section>
             <!-- #*/ dnel Karusel/* -->
             <section class="services-grid">
@@ -200,81 +141,13 @@ What services do you provide?
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
         <style>
-            .faq-container {
-                max-width: 800px;
-                margin: 20px auto;
-                font-family: Arial, sans-serif;
-            }
-            .faq-item {
-                display: flex;
-                align-items: center;
-                gap: 5px;
-                border-bottom: 1px solid #008000;
-                padding: 15px 0;
-            }
-            .faq-question {
-                max-height: 100px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                cursor: pointer;
-                font-weight: bold;
-                font-size: 1.1em;
-                margin: 0;
-                padding: 15px;
-            }
-            .faq-answer {
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 1s ease;
-                color: white;
-                background: #008000;
-                padding: 0 15px;
-            }
-
-            .faq-answer.show {
-                max-height: 70px;
-                padding: 15px;
-            }
-            .icon {
-                color: #008000;
-                font-size: 1.3em;
-                transition: transform 0.3s ease;
-            }
-            .rotate {
-                transform: rotate(180deg);
-            }
-            ul {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                }
-
-            ul li {
-            color: white;
-            margin: 14px 0;
-            font-size: 14px;
-            }
-            .hero-text {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-            }
-            .divik  {
-                float: right;
-            }
-
             /* karuseli mas*/
             .swiper { width: 100%; padding: 40px 0; }
             .swiper-slide { display: flex; justify-content: center; }
             .swiper-button-next, .swiper-button-prev { color: #FD7400; }
             .swiper-pagination-bullet-active { background: #FD7400; }
         </style>
+        
         <script>
 document.querySelectorAll('.faq-question').forEach(question => {
                 question.addEventListener('click', () => {
