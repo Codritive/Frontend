@@ -207,17 +207,17 @@ nav {
 }
 /* Home page styles */
 .hero {
+    align-items: center;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
-    align-items: center;
-    padding: 60px 40px;
     margin-bottom: 40px;
+    padding: 60px 40px;
 }
 .hero-image {
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 .hero-image img {
     width: 100%;
@@ -235,6 +235,7 @@ nav {
     margin-bottom: 20px;
     text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     line-height: 1.2;
+    margin-top: 20px
 }
 .hero p {
     font-size: 1.2rem;
@@ -275,6 +276,16 @@ button[type="submit"] {
     text-align: center;
     color: white;
 }
+ul {
+    padding: 0;
+    margin: 0;
+    }
+
+ul li {
+    color: white;
+    margin: 14px 0;
+    font-size: 16px;
+    }
 .feature-icon {
     width: 60px;
     height: 60px;
@@ -652,6 +663,9 @@ button[type="submit"] {
 .copyright a {
 	color: rgba(255, 255, 255, 0.6);
 	text-decoration: none;
+}
+.text-color-white {
+    color: white;
 }
 /* Responsive design */
 @media (max-width: 1024px) {

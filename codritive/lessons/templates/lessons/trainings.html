@@ -13,65 +13,51 @@
 
                     <p>{{ course.full_description }}</p>
                     {% if course.image %}
-                        <img src="{{ course.image.url }}" style="width: 400px; height: 300px;">
+                    <img src="{{ course.image.url }}" style="width: 400px; height: 300px;">
                     {% endif %}
+                </div>
+                <div>
+                    <div class="cta-element" style=" margin-left: 20px;">
+                        {{ course.lesson_duration_month }} ամիս 
                     </div>
-                    <button class="cta-button">Enroll Now</button>
+                    <div class="cta-element" style=" margin-left: 20px;">
+                        Շաբաթը {{ course.weekly_lessons }} օր
+                    </div>
+                    <div class="cta-element" style=" margin-left: 20px;">
+                        {{ course.lesson_duration_minutes }} րոպե
+                    </div>
+                    <div class="cta-element" style=" margin-left: 20px;">
+                        {{ course.price }} դրամ
+                        
+                    </div>
+                    <button class="cta-button" style="margin-left: 150px">Enroll Now</button>
+                </div>
+                    
+                    
                 </section>
                     <section class="hero glass">
                             <h1 class="main-title">title ( For whom is this )</h1>
                             <div class="hero-text-wrapper">
-                                <ul>
-                                    <li>
-                                        text text text text text text text
-                                        text text text text text text text
-                                        text text text text text text text
-                                        text text text text text text text text
-                                            text text text text text text text text
-                                            text text text text text text text text
-                                            text text text text text text text text
-                                            text text text text text text text text
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="hero-text-wrapper">
-                                <ul>
-                                    <li>
-                                        text text text text text text text
-                                        text text text text text text text
-                                        text text text text text text text
-                                        text text text text text text text text
-                                        text text text bkablbdskajdtext text text text text
-                                        text text text text text text text text
-                                        text text text text text text text text
-                                        text text text text text text text text
+                                <div class="hero-text-wrapper">
+                                    <p>
+                                        {{ course.for_whom }}
 
-                                    </li>
-                                </ul>
+                                    </p>
+                                  
+                                </div>
                             </div>
+                           
 
 
                     <button class="cta-button">Enroll Now</button>
                 </section>
                 <section class="hero glass">
                     <h1 class="main-title">title (Why Python)</h1>
-                    <ul>
-                        <li>
-                            .text text text text text text
-                            text text text text text text
-                            text text text text text text
-                            .text text text text text text
-                            text text text text text text
-                            text text text text text text .text text text text text text
-                            text text text text text text
-                            text text text text text text .text text text text text text
-                            text text text text text text
-                            text text text text text text .text text text text text text
-                            text text text text text text
-                            text text text text text text
-                            text text text text text text
-                        </li>
-                    </ul>
+                    <p>
+                        {{ course.why_this_course }}
+                    </p>
+                    <button class="cta-button">Enroll Now</button>
+                    
                 </section>
                 <section class="hero glass">
                     <h1>
@@ -79,24 +65,11 @@
                     </h1>
                     <ul>
                         <li>
-                            .curriculum
-                        </li>
-                        <li>
-                            .curriculum
-                        </li>
-                        <li>
-                            .curriculum
-                        </li>
-                        <li>
-                            .curriculum
-                        </li>
-                        <li>
-                            .curriculum
-                        </li>
-                        <li>
-                            .curriculum
+                            {{ course.curriculum }}
                         </li>
                     </ul>
+                    <button class="cta-button">Enroll Now</button>
+
                 </section>
                 <section class="hero glass">
                     <h2 class="main-title">{{ course.tutor.name }}</h2>
@@ -168,6 +141,19 @@
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
         <style>
+            .cta-element {
+                display: inline-block;
+                padding: 15px 40px;
+                background: rgba(25, 214, 0, 0.3);
+                color: white;
+                text-decoration: none;
+                border-radius: 50px;
+                font-weight: 600;
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                transition: all 0.3s ease;
+                border: 2px solid rgba(25, 214, 0, 0.3);
+                cursor: pointer;
+            }
             .faq-container {
                 max-width: 800px;
                 margin: 20px auto;
@@ -212,17 +198,7 @@
             .rotate {
                 transform: rotate(180deg);
             }
-            ul {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                }
-
-            ul li {
-            color: white;
-            margin: 14px 0;
-            font-size: 14px;
-            }
+           
             .hero-text {
                 position: absolute;
                 top: 50%;

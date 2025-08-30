@@ -243,18 +243,18 @@ nav {
 .cta-button {
     display: inline-block;
     padding: 15px 40px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(25, 214, 0, 0.3);
     color: white;
     text-decoration: none;
     border-radius: 50px;
     font-weight: 600;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     transition: all 0.3s ease;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(25, 214, 0, 0.3);
     cursor: pointer;
 }
 .cta-button:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(25, 214, 0, 0.3);
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
