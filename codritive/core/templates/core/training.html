@@ -16,7 +16,7 @@
                 
                 <section class="services-grid">
                     {% for course in courses %}
-                    <a href="{% url 'lessons:trainings' %}" class="service-card-link">
+                    <a href="{% url 'lessons:course_detail' course.pk %}" class="service-card-link">
                         <div class="service-card glass">
                             <h3>{{ course.title }}</h3>
                             <p>{{ course.category }}</p>

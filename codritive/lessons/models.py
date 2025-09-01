@@ -18,10 +18,11 @@ class Course(models.Model):
     full_description = models.TextField()
     lesson_duration_month= models.IntegerField()
     lesson_duration_minutes = models.IntegerField()
-    tutor = models.ForeignKey(Our_Team, on_delete=models.SET_NULL, null=True)
+    tutor = models.ForeignKey(Our_Team, on_delete=models.SET_NULL, null=True, related_name='courses')
     curriculum = models.TextField()
     image = models.ImageField(upload_to='course_images/', blank=True, null=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
+    
     def __str__(self):
         return self.title
 
@@ -29,6 +30,7 @@ class Course(models.Model):
         verbose_name_plural = "Courses"
 
 class FAQ(models.Model):
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='faqs')
     question = models.CharField(max_length=255)
     answer = models.TextField()
 
