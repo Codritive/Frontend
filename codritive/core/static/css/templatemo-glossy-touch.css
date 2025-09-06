@@ -30,8 +30,8 @@ body {
         #a0616a 100%
         );
     background-color: transparent; /* Or try #000, #111, etc. */
-    background-color:#656d68d3;
-    background-image: none;
+    background-color: #1A1A1A !important;
+    background-image: none !important;
     min-height: 100vh;
     overflow-x: hidden;
     overflow: scroll;
@@ -198,7 +198,8 @@ body {
 }
 /* Glass container styles */
 .glass {
-    background: #034D28;
+    background-color: #0000008c;
+
     
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -210,10 +211,11 @@ body {
 }
 
 .glass:hover {
-    background: #656d6834;
     transform: translateY(-5px);
     box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+    
 }
+
 /* Header styles */
 header {
     padding: 20px;
@@ -385,10 +387,22 @@ nav {
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
+.rect-btn {
+  background-color: rgba(255, 255, 255, 0.2);/* blue background */
+  color: white;              /* white text */
+  padding: 10px 20px;        /* rectangle shape */
+  border: none;              /* remove border */
+  border-radius: 0;          /* makes it a rectangle */
+  cursor: pointer;           /* show pointer on hover */
+}
+.rect-btn:hover {
+  background-color: #0056b3;
+}
 button[type="submit"] {
     font-family: inherit;
     font-size: 16px;
 }
+
 .features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

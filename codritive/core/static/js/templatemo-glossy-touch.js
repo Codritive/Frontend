@@ -58,36 +58,36 @@ let currentPage = 'home';
         });
 
         // Add click ripple effect to glass elements
-        document.querySelectorAll('.glass').forEach(element => {
-            element.addEventListener('click', function(e) {
-                const ripple = document.createElement('div');
-                const rect = this.getBoundingClientRect();
-                const size = Math.max(rect.width, rect.height);
-                const x = e.clientX - rect.left - size / 2;
-                const y = e.clientY - rect.top - size / 2;
+        // document.querySelectorAll('.glass').forEach(element => {
+        //     element.addEventListener('click', function(e) {
+        //         const ripple = document.createElement('div');
+        //         const rect = this.getBoundingClientRect();
+        //         const size = Math.max(rect.width, rect.height);
+        //         const x = e.clientX - rect.left - size / 2;
+        //         const y = e.clientY - rect.top - size / 2;
                 
-                ripple.style.cssText = `
-                    position: absolute;
-                    width: ${size}px;
-                    height: ${size}px;
-                    left: ${x}px;
-                    top: ${y}px;
-                    background: rgba(255, 255, 255, 0.3);
-                    border-radius: 50%;
-                    transform: scale(0);
-                    animation: ripple 0.6s linear;
-                    pointer-events: none;
-                    z-index: 1000;
-                `;
+        //         ripple.style.cssText = `
+        //             position: absolute;
+        //             width: ${size}px;
+        //             height: ${size}px;
+        //             left: ${x}px;
+        //             top: ${y}px;
+        //             background: rgba(255, 255, 255, 0.3);
+        //             border-radius: 50%;
+        //             transform: scale(0);
+        //             animation: ripple 0.6s linear;
+        //             pointer-events: none;
+        //             z-index: 1000;
+        //         `;
                 
-                this.style.position = 'relative';
-                this.appendChild(ripple);
+        //         this.style.position = 'relative';
+        //         this.appendChild(ripple);
                 
-                setTimeout(() => {
-                    ripple.remove();
-                }, 600);
-            });
-        });
+        //         setTimeout(() => {
+        //             ripple.remove();
+        //         }, 600);
+        //     });
+        // });
 
         // Add ripple animation keyframes
         const style = document.createElement('style');
