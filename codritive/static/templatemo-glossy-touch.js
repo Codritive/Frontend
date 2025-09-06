@@ -142,3 +142,37 @@ let currentPage = 'home';
             }
         `;
         document.head.appendChild(fadeStyle);
+        
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.toggle('active');
+
+                const answer = button.nextElementSibling;
+
+                if (button.classList.contains('active')) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                } else {
+                    answer.style.maxHeight = 0;
+                }
+            });
+        });
+
+        let currentSlide = 0;
+                const slides = document.querySelectorAll('#heroCarousel .carousel-slide');
+
+                function showSlide(index) {
+                    slides.forEach((slide, i) => {
+                        slide.classList.toggle('active', i === index);
+                    });
+                }
+
+                function moveSlide(step) {
+                    currentSlide = (currentSlide + step + slides.length) % slides.length;
+                    showSlide(currentSlide);
+                }
+
+                // Optional: Auto-slide every 5 seconds
+                setInterval(() => moveSlide(1), 5000);
+
+                // Initialize
+                showSlide(currentSlide);

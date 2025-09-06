@@ -6,12 +6,38 @@
         <div class="container">
             <div class="content-wrapper">
                 <section class="hero glass">
-                    <div class="hero-image">
-                        <img src="{% static 'images/templatemo-futuristic-girl.jpg' %}" alt="Modern Technology Interaction" />
-                    </div>
-                    <div class="hero-content">
-                        <h1>Welcome to the Future</h1>
-                        <p>Professional IT Training Courses taught by real industry experts.</p>
+                    <h1>Welcome to Codritive</h1>
+                    <h2 class="text-color-white">Your Partner in Technology Solutions and IT Training</h2>
+                    <p>At Codritive, we specialize in delivering top-notch software development,
+                         quality assurance services, and professional IT training courses. 
+                         Our mission is to empower businesses and individuals with the skills 
+                         and solutions they need to thrive in the digital age.</p>
+                </section>
+                <section class="hero glass">
+                    <div id="heroCarousel" class="carousel">
+                        <div class="carousel-slide active">
+                            <img src="{% static 'images/templatemo-futuristic-girl.jpg' %}" alt="Modern Technology Interaction" />
+                            <div class="hero-content">
+                                <h1>Welcome to the Future</h1>
+                                <p>Professional IT Training Courses taught by real industry experts.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="{% static 'images/templatemo-futuristic-girl2.jpg' %}" alt="Cutting-edge Learning" />
+                            <div class="hero-content">
+                                <h1>Learn with Experts</h1>
+                                <p>Join our hands-on workshops and events for all skill levels.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="{% static 'images/templatemo-futuristic-girl3.jpg' %}" alt="Innovative Courses" />
+                            <div class="hero-content">
+                                <h1>Shape Your Career</h1>
+                                <p>Explore courses in Web Development, Data Science, and more.</p>
+                            </div>
+                        </div>
+                        <button class="carousel-control prev" onclick="moveSlide(-1)">&#10094;</button>
+                        <button class="carousel-control next" onclick="moveSlide(1)">&#10095;</button>
                     </div>
                 </section>
                 <section class="services-grid">

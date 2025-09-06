@@ -8,161 +8,7 @@
     
     <link rel="stylesheet" href="{% static 'templatemo-glossy-touch.css' %}">
 
-    <style>
-.logo {
-    height: 40px; /* Adjust height as needed */
-    width: auto; /* Maintain aspect ratio */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-   body {
-    background-color: transparent; /* Or try #000, #111, etc. */
-    overflow: scroll;
-   }
-   
-.shape {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-left: 60px solid transparent;
-    border-right: 60px solid transparent;
-    border-bottom: 100px solid rgba(1, 53, 23, 0.904); /* triangle color */
-    background: none;
-    box-shadow: none; /* optional: remove shadow or add custom */
-    animation: float 6s ease-in-out infinite;
-}
-.shape:nth-child(1) {
-    border-bottom: 100px solid #FD7400; /* red */
-}
-.shape:nth-child(2) {
-    border-bottom: 100px solid #7ED956; /* green */
-}
-.shape:nth-child(3) {
-    border-bottom: 100px solid #7ed956; /* yellow */
-}
-.shape:nth-child(4) {
-    border-bottom: 100px solid #FD7400; /* blue */
-}
-.shape:nth-child(5) {
-    border-bottom: 100px solid #33C0CB; /* pink */
-}
-.shape:nth-child(6) {
-    border-bottom: 100px solid #33C0CB; ; /* dark blue */
-}
-.shape:nth-child(7) {
-    border-bottom: 100px solid #FD7400; /* red */
-}
-.shape:nth-child(8) {
-    border-bottom: 100px solid #7ED956; /* green */
-}
-.shape:nth-child(9) {
-    border-bottom: 100px solid #7ED956; /* yellow */
-}
-.shape:nth-child(10) {
-    border-bottom: 100px solid #FD7400; /* blue */
-}
-.shape:nth-child(11) {
-    border-bottom: 100px solid #33C0CB; /* pink */
-}
-.shape:nth-child(12) {
-    border-bottom: 100px solid #33C0CB; ; /* dark blue */
-}
-    /* Glass container styles */
-    .glass {
-    background: #034D28;
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    }
-    .glass:hover {
-    background: #656d6834;
-    transform: translateY(-5px);
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
-    }
-    .bg-shapes {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: -1; 
-        width: 100vw;
-        height: 100vh;
-        min-height: 100%;
-        background-color: transparent; /* Change this to your desired background */
-    }
-body { 
-    background-color:#656d68d3;
-    background-image: none;
-}
-.team-avatar-img {
-    border-radius: 50%;
-    object-fit: cover;
-    width: 160px;
-    height: 160px;
-    border: 2px solid #fff; /* optional: adds a white border */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* optional: subtle shadow */
-}
-.hero {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Push content to the top */
-    align-items: flex-start;         /* Center horizontally */
-    padding-top: 20px;           /* Space from the very top */
-}
-.main-title {
-                    margin-top: -10;               /* Remove any default margin pushing it down */
-                }
 
-.faq-container {
-    max-width: 600px;
-    margin: auto;
-    background: #000000;
-    padding: 20px;
-    border-radius: 8px;
-}
-
-.faq-item {
-    border-bottom: 1px solid #020101;
-}
-
-.faq-question {
-    width: 100%;
-    background: none;
-    border: none;
-    text-align: left;
-    padding: 15px 0;
-    font-size: 18px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-}
-
-.faq-question .icon {
-    transition: transform 0.3s ease;
-}
-
-.faq-question.active .icon {
-    transform: rotate(180deg);
-}
-
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-    color: #ffffff;
-}
-
-.faq-answer p {
-    padding: 10px 0;
-}
-
-    </style>
 </head>
 <body>
     <div class="bg-shapes">
@@ -217,4 +63,13 @@ body {
     </div>
 <script src="{% static 'templatemo-glossy-touch.js' %}"></script>
 </body>
+<style>
+    body {
+        background-color: #1A1A1A !important;
+        background-image: none !important;
+    }
+    .glass {
+        background-color: #0000008c;
+    }
+</style>
 </html>
