@@ -1136,28 +1136,3 @@ ul li {
 
 
 
-
-.swiper {
-  width: 100%;
-  padding: 40px 0;
-}
-
-.swiper-wrapper {
-  display: flex; /* Սա ոչ միշտ պետք է, Swiper ինքն է կարգավորում */
-}
-
-.swiper-slide {
-  flex-shrink: 0;   
-  width: 300px;       
-  display: flex;
-  justify-content: center;
-}
-
-.service-card {
-  width: 100%;
-  min-height: 220px;
-  border-radius: 12px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  text-align: center;
-}
