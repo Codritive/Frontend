@@ -28,12 +28,9 @@
                     </div>
                     <div class="cta-element" style=" margin-left: 20px;">
                         {{ course.price }} դրամ
-                        
                     </div>
                     <button class="cta-button" style="margin-left: 150px">Enroll Now</button>
                 </div>
-                    
-                    
                 </section>
                     <section class="hero glass">
                             <h1 class="main-title">title ( For whom is this )</h1>
@@ -43,10 +40,8 @@
                                         {{ course.for_whom }}
 
                                     </p>
-                                  
                                 </div>
                             </div>
-                           
 
 
                     <button class="cta-button">Enroll Now</button>
@@ -57,7 +52,6 @@
                         {{ course.why_this_course }}
                     </p>
                     <button class="cta-button">Enroll Now</button>
-                    
                 </section>
                 <section class="hero glass">
                     <h1>
@@ -78,7 +72,7 @@
                     </div>
                     <div class="divik">
                         <p>
-                            {{ course.tutor.bio}} 
+                            {{ course.tutor.bio}}
                         </p>
                     </div>
                 </section>
@@ -101,8 +95,8 @@
                                     </li>
                                 </ul>
                             </div>
+                            {% endfor %}
                         </div>
-                        {% endfor %}
             </section>
             <!-- #*/ dnel Karusel/* -->
             <section class="services-grid">
@@ -141,43 +135,256 @@
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
         <style>
+            .faq-container {
+                max-width: 800px;
+                margin: 20px auto;
+                font-family: Arial, sans-serif;
+            }
+            .faq-item {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                border-bottom: 1px solid #008000;
+                padding: 15px 0;
+            }
+            .faq-question {
+                max-height: 100px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+                font-weight: bold;
+                font-size: 1.1em;
+                margin: 0;
+                padding: 15px;
+            }
+            .faq-answer {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 1s ease;
+                color: white;
+                background: #008000;
+                padding: 0 15px;
+            }
+
+            .faq-answer.show {
+                max-height: 70px;
+                padding: 15px;
+            }
+            .icon {
+                color: #008000;
+                font-size: 1.3em;
+                transition: transform 0.3s ease;
+            }
+            .rotate {
+                transform: rotate(180deg);
+            }
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                }
+
+            ul li {
+            color: white;
+            margin: 14px 0;
+            font-size: 14px;
+            }
+            .hero-text {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            .divik  {
+                float: right;
+            }
+
             /* karuseli mas*/
             .swiper { width: 100%; padding: 40px 0; }
             .swiper-slide { display: flex; justify-content: center; }
             .swiper-button-next, .swiper-button-prev { color: #FD7400; }
             .swiper-pagination-bullet-active { background: #FD7400; }
+
+
+            
+.faq-section .glass {
+    display: flex;
+    flex-direction: column; 
+    width: 100%; 
+    box-sizing: border-box;
+    padding: 5px; 
+    margin-bottom: 10px;
+    border-radius: 12px; 
+    background-color: rgba(255, 255, 255, 0.05); 
+}
+
+
+
+.faq-question {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 15px;
+    height: 70px; 
+    box-sizing: border-box;
+}
+
+
+
+.faq-answer {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease, padding 0.6s ease;
+    box-sizing: border-box;
+    padding: 0 20px;
+    color: white;
+    background-color: #FD7400;
+}
+.faq-answer.show {
+    max-height: 150px;
+    padding: 10px 20px;
+}
+
+.icon.rotate {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+
+
+.faq-section .icon {
+    font-size: 1.3em;
+    transition: transform 0.3s ease;
+}
+
+
+.faq-section .glass:nth-of-type(1) .icon { color: #FD7400; }
+.faq-section .glass:nth-of-type(2) .icon { color: #00A8E8; }
+.faq-section .glass:nth-of-type(3) .icon { color: #32CD32; }
+.faq-section .glass:nth-of-type(n+4) .icon { color: #008000; }
+
+
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+ul li {
+    color: white;
+    margin: 14px 0;
+    font-size: 14px;
+}
+
+/* ===== թազա դրած աջ կողմի իկոնների մաս ===== */
+.faq-wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    position: relative;
+}
+
+.faq-icons {
+
+    width: 700px;
+    height: 100%;
+    pointer-events: none;
+}
+
+.faq-icon {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 94px;
+    cursor: pointer;
+    animation: float 3s ease-in-out infinite;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.faq-icon:hover {
+    transform: scale(1.2);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+/* =====իկոնների տեղը ու չափերը փոխել աջ ձախ ===== */
+.faq-icon:nth-child(1) { top: 5%; right: 20%; animation-delay: 0s; }
+.faq-icon:nth-child(2) { top: 25%; right: 35%; animation-delay: 0.5s; }
+.faq-icon:nth-child(3) { top: -25%; right: 10%; animation-delay: 1s; }
+.faq-icon:nth-child(4) { top: 80%; right: 20%; animation-delay: 1.5s; }
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+/* ===== Hero / divik / Karusel ===== */
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+.divik {
+    float: right;
+}
+
+/* Karusel */
+.swiper { width: 100%; padding: 40px 0; }
+.swiper-slide { display: flex; justify-content: center; }
+.swiper-button-next, .swiper-button-prev { color: #FD7400; }
+.swiper-pagination-bullet-active { background: #FD7400; }
+
         </style>
-        
         <script>
-document.querySelectorAll('.faq-question').forEach(question => {
-                question.addEventListener('click', () => {
-                    const answer = question.nextElementSibling;
-                    const arrow = question.querySelector('.arrow');
-                    answer.classList.toggle('show');
-                    if(arrow){ arrow.classList.toggle('rotate'); }
-                });
-            });
+document.querySelectorAll('.faq-section .faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        const arrow = question.querySelector('.icon');
+        answer.classList.toggle('show');
+        if(arrow) arrow.classList.toggle('rotate');
+    });
+});
 
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 3,
     spaceBetween: 20,
     loop: true,
     autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
+delay: 3000,
+disableOnInteraction: false,
     },
     pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
+el: ".swiper-pagination",
+clickable: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+nextEl: ".swiper-button-next",
+prevEl: ".swiper-button-prev",
     },
     breakpoints: {
-      1024: { slidesPerView: 3 },
-      768: { slidesPerView: 2 },
-      480: { slidesPerView: 1 },
+1024: { slidesPerView: 3 },
+768: { slidesPerView: 2 },
+480: { slidesPerView: 1 },
     },
 });
         </script>
