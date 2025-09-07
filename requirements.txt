@@ -4,3 +4,4 @@ sqlparse>=0.4
 pytz
 Pillow>=9.0
 gunicorn
+whitenoise>=6.0
