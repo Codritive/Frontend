@@ -96,30 +96,31 @@
     </section>
 
     <!-- Courses Carousel -->
-    <section class="services-grid">
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                {% for c in courses %}
-                    <div class="swiper-slide">
-                        <a href="{% url 'lessons:course_detail' c.pk %}" class="service-card-link">
-                            <div class="service-card glass">
-                                <h3>{{ c.title }}</h3>
-                                <p>{{ c.category }}</p>
-                                {% if c.image %}
-                                    <img src="{{ c.image.url }}" alt="{{ c.title }}" class="course-image" style="height: 160px;">
-                                {% endif %}
-                                <li>{{ c.short_description }}</li>
+         <section class="services-grid">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        {% for course in courses %}
+                            <div class="swiper-slide">
+                                <a href="{% url 'lessons:course_detail' course.pk %}" class="service-card-link">
+                                    <div class="service-card glass">
+                                        <h3>{{ course.title }}</h3>
+                                        <p>{{ course.category }}</p>
+                                        {% if course.image %}
+                                            <img src="{{ course.image.url }}" alt="{{ course.title }}" class="course-image" style="height: 160px;">
+                                        {% endif %}
+                                        <li>{{ course.short_description }}</li>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
+                            {% endfor %}
                     </div>
-                {% endfor %}
-            </div>
 
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-        </div>
-    </section>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
 
 </div>
 
