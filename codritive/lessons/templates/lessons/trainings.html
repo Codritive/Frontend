@@ -1,403 +1,128 @@
 {% extends "core/base.html" %}
-
 {% load static %}
 
-{% block title %}{{ courses.title }}{% endblock %}
+{% block title %}{{ course.title }}{% endblock %}
 
 {% block content %}
-<div>
-    <div class="container">
-            <section class="hero glass">
-                <h1 class="main-title">{{ course.title }}</h1>
-                <div class="hero-image">
+<link rel="stylesheet" href="{% static 'libs/swiper/swiper-bundle.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/course_detail.css' %}">
 
-                    <p>{{ course.full_description }}</p>
-                    {% if course.image %}
-                    <img src="{{ course.image.url }}" style="width: 400px; height: 300px;">
-                    {% endif %}
+<div class="container">
+
+    <!-- Hero Section -->
+    <section class="hero glass">
+        <h1 class="main-title">{{ course.title }}</h1>
+        <div class="hero-image">
+            <p>{{ course.full_description }}</p>
+            {% if course.image %}
+                <img src="{{ course.image.url }}" style="width: 400px; height: 300px;">
+            {% endif %}
+        </div>
+        <div class="cta-info">
+            <div class="cta-element">{{ course.lesson_duration_month }} ամիս</div>
+            <div class="cta-element">Շաբաթը {{ course.weekly_lessons }} օր</div>
+            <div class="cta-element">{{ course.lesson_duration_minutes }} րոպե</div>
+            <div class="cta-element">{{ course.price }} դրամ</div>
+            <button class="cta-button">Enroll Now</button>
+        </div>
+    </section>
+
+    <!-- For Whom Section -->
+    <section class="hero glass">
+        <h1 class="main-title">For whom is this</h1>
+        <div class="hero-text-wrapper">
+            <p>{{ course.for_whom }}</p>
+        </div>
+        <button class="cta-button">Enroll Now</button>
+    </section>
+
+    <!-- Why Python Section -->
+    <section class="hero glass">
+        <h1 class="main-title">Why Python</h1>
+        <p>{{ course.why_this_course }}</p>
+        <button class="cta-button">Enroll Now</button>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section class="hero glass">
+        <h1>Curriculum</h1>
+        <ul>
+            <li>{{ course.curriculum }}</li>
+        </ul>
+        <button class="cta-button">Enroll Now</button>
+    </section>
+
+    <!-- Tutor Section -->
+    <section class="hero glass">
+        <h2>{{ course.tutor.name }}</h2>
+        <div class="hero-image">
+            <img src="{{ course.tutor.image.url }}" style="width: 300px; height: 300px;">
+        </div>
+        <div class="divik">
+            <p>{{ course.tutor.bio }}</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="hero glass faq-section">
+        <h1>FAQ</h1>
+        <div class="faq-wrapper">
+            <div class="faq-items">
+                {% for course in faqs %}
+                <div class="glass">
+                    <div class="faq-question">
+                        <ul>
+                            <li>{{ course.question }}</li>
+                        </ul>
+                        <span class="icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <ul>
+                            <li>{{ course.answer }}</li>
+                        </ul>
+                    </div>
                 </div>
-                <div>
-                    <div class="cta-element" style=" margin-left: 20px;">
-                        {{ course.lesson_duration_month }} ամիս 
-                    </div>
-                    <div class="cta-element" style=" margin-left: 20px;">
-                        Շաբաթը {{ course.weekly_lessons }} օր
-                    </div>
-                    <div class="cta-element" style=" margin-left: 20px;">
-                        {{ course.lesson_duration_minutes }} րոպե
-                    </div>
-                    <div class="cta-element" style=" margin-left: 20px;">
-                        {{ course.price }} դրամ
-                    </div>
-                    <button class="cta-button" style="margin-left: 150px">Enroll Now</button>
-                </div>
-                </section>
-                    <section class="hero glass">
-                            <h1 class="main-title">title ( For whom is this )</h1>
-                            <div class="hero-text-wrapper">
-                                <div class="hero-text-wrapper">
-                                    <p>
-                                        {{ course.for_whom }}
-
-                                    </p>
-                                </div>
-                            </div>
-
-
-                    <button class="cta-button">Enroll Now</button>
-                </section>
-                <section class="hero glass">
-                    <h1 class="main-title">title (Why Python)</h1>
-                    <p>
-                        {{ course.why_this_course }}
-                    </p>
-                    <button class="cta-button">Enroll Now</button>
-                </section>
-                <section class="hero glass">
-                    <h1>
-                        Curriculum
-                    </h1>
-                    <ul>
-                        <li>
-                            {{ course.curriculum }}
-                        </li>
-                    </ul>
-                    <button class="cta-button">Enroll Now</button>
-
-                </section>
-                <section class="hero glass">
-                    <h2 class="text-color-white">{{ course.tutor.name }}</h2>
-                    <div class="hero-image">
-                        <img src="{{ course.tutor.image.url }}" style="width: 300px; height: 300px;">
-                    </div>
-                    <div class="divik">
-                        <p>
-                            {{ course.tutor.bio}}
-                        </p>
-                    </div>
-                </section>
-<section class="hero glass faq-section">
-    <h1>FAQ</h1>
-    <div class="faq-wrapper">
-        <div class="faq-items">
-            {% for course in faqs %}
-            <div class="glass">
-                <div class="faq-question">
-                    <ul>
-                        <li>{{ course.question }}</li>
-                    </ul>
-                    <span class="icon">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <ul>
-                        <li>{{ course.answer }}</li>
-                    </ul>
-                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
-        </div>
 
-        <!-- Աջ կողմի իկոնները -->
-        <div class="faq-icons">
-            <div class="faq-icon">💡</div>
-            <div class="faq-icon">❔</div>
-            <div class="faq-icon">🔍</div>
-                        <div class="faq-icon">🧩</div>
-
-        </div>
-    </div>
-</section>
-
-
-
-            <!-- #*/ dnel Karusel/* -->
-            <section class="services-grid">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        {% for course in courses %}
-                            <div class="swiper-slide">
-                                <a href="{% url 'lessons:course_detail' course.pk %}" class="service-card-link">
-                                    <div class="service-card glass">
-                                        <h3>{{ course.title }}</h3>
-                                        <p>{{ course.category }}</p>
-                                        {% if course.image %}
-                                            <img src="{{ course.image.url }}" alt="{{ course.title }}" class="course-image" style="height: 160px;">
-                                        {% endif %}
-                                        <li>{{ course.short_description }}</li>
-                                    </div>
-                                </a>
-                            </div>
-                            {% endfor %}
-                    </div>
-
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-
-                    <div class="swiper-pagination"></div>
-                </div>
-            </section>
-            <!-- End Carousel -->
+            <!-- Right side icons -->
+            <div class="faq-icons">
+                <div class="faq-icon">💡</div>
+                <div class="faq-icon">❔</div>
+                <div class="faq-icon">🔍</div>
+                <div class="faq-icon">🧩</div>
             </div>
         </div>
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-        />
-        <!-- karuseli logik JS -->
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    </section>
 
-        <style>
-            .faq-container {
-                max-width: 800px;
-                margin: 20px auto;
-                font-family: Arial, sans-serif;
-            }
-            .faq-item {
-                display: flex;
-                align-items: center;
-                gap: 5px;
-                border-bottom: 1px solid #008000;
-                padding: 15px 0;
-            }
-            .faq-question {
-                max-height: 100px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                cursor: pointer;
-                font-weight: bold;
-                font-size: 1.1em;
-                margin: 0;
-                padding: 15px;
-            }
-            .faq-answer {
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 1s ease;
-                color: white;
-                background: #008000;
-                padding: 0 15px;
-            }
+    <!-- Courses Carousel -->
+    <section class="services-grid">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                {% for c in courses %}
+                    <div class="swiper-slide">
+                        <a href="{% url 'lessons:course_detail' c.pk %}" class="service-card-link">
+                            <div class="service-card glass">
+                                <h3>{{ c.title }}</h3>
+                                <p>{{ c.category }}</p>
+                                {% if c.image %}
+                                    <img src="{{ c.image.url }}" alt="{{ c.title }}" class="course-image" style="height: 160px;">
+                                {% endif %}
+                                <li>{{ c.short_description }}</li>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
 
-            .faq-answer.show {
-                max-height: 70px;
-                padding: 15px;
-            }
-            .icon {
-                color: #008000;
-                font-size: 1.3em;
-                transition: transform 0.3s ease;
-            }
-            .rotate {
-                transform: rotate(180deg);
-            }
-            ul {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                }
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
 
-            ul li {
-            color: white;
-            margin: 14px 0;
-            font-size: 14px;
-            }
-            .hero-text {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-            }
-            .divik  {
-                float: right;
-            }
+</div>
 
-            /* karuseli mas*/
-            .swiper { width: 100%; padding: 40px 0; }
-            .swiper-slide { display: flex; justify-content: center; }
-            .swiper-button-next, .swiper-button-prev { color: #FD7400; }
-            .swiper-pagination-bullet-active { background: #FD7400; }
-
-
-            
-.faq-section .glass {
-    display: flex;
-    flex-direction: column; 
-    width: 100%; 
-    box-sizing: border-box;
-    padding: 5px; 
-    margin-bottom: 10px;
-    border-radius: 12px; 
-    background-color: rgba(255, 255, 255, 0.05); 
-}
-
-
-
-.faq-question {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 1.1em;
-    padding: 15px;
-    height: 70px; 
-    box-sizing: border-box;
-}
-
-
-
-.faq-answer {
-    width: 100%;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.6s ease, padding 0.6s ease;
-    box-sizing: border-box;
-    padding: 0 20px;
-    color: white;
-    background-color: #FD7400;
-}
-.faq-answer.show {
-    max-height: 150px;
-    padding: 10px 20px;
-}
-
-.icon.rotate {
-    transform: rotate(180deg);
-    transition: transform 0.3s ease;
-}
-
-
-
-.faq-section .icon {
-    font-size: 1.3em;
-    transition: transform 0.3s ease;
-}
-
-
-.faq-section .glass:nth-of-type(1) .icon { color: #FD7400; }
-.faq-section .glass:nth-of-type(2) .icon { color: #00A8E8; }
-.faq-section .glass:nth-of-type(3) .icon { color: #32CD32; }
-.faq-section .glass:nth-of-type(n+4) .icon { color: #008000; }
-
-
-
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-ul li {
-    color: white;
-    margin: 14px 0;
-    font-size: 14px;
-}
-
-/* ===== թազա դրած աջ կողմի իկոնների մաս ===== */
-.faq-wrapper {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    position: relative;
-}
-
-.faq-icons {
-
-    width: 700px;
-    height: 100%;
-    pointer-events: none;
-}
-
-.faq-icon {
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-weight: bold;
-    font-size: 94px;
-    cursor: pointer;
-    animation: float 3s ease-in-out infinite;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.faq-icon:hover {
-    transform: scale(1.2);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
-}
-
-/* =====իկոնների տեղը ու չափերը փոխել աջ ձախ ===== */
-.faq-icon:nth-child(1) { top: 5%; right: 20%; animation-delay: 0s; }
-.faq-icon:nth-child(2) { top: 25%; right: 35%; animation-delay: 0.5s; }
-.faq-icon:nth-child(3) { top: -25%; right: 10%; animation-delay: 1s; }
-.faq-icon:nth-child(4) { top: 80%; right: 20%; animation-delay: 1.5s; }
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0); }
-}
-
-/* ===== Hero / divik / Karusel ===== */
-.hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-}
-.divik {
-    float: right;
-}
-
-/* Karusel */
-.swiper { width: 100%; padding: 40px 0; }
-.swiper-slide { display: flex; justify-content: center; }
-.swiper-button-next, .swiper-button-prev { color: #FD7400; }
-.swiper-pagination-bullet-active { background: #FD7400; }
-
-        </style>
-        <script>
-document.querySelectorAll('.faq-section .faq-question').forEach(question => {
-    question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
-        const arrow = question.querySelector('.icon');
-        answer.classList.toggle('show');
-        if(arrow) arrow.classList.toggle('rotate');
-    });
-});
-
-var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 3,
-    spaceBetween: 20,
-    loop: true,
-    autoplay: {
-delay: 3000,
-disableOnInteraction: false,
-    },
-    pagination: {
-el: ".swiper-pagination",
-clickable: true,
-    },
-    navigation: {
-nextEl: ".swiper-button-next",
-prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-1024: { slidesPerView: 3 },
-768: { slidesPerView: 2 },
-480: { slidesPerView: 1 },
-    },
-});
-        </script>
+<script src="{% static 'libs/swiper/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'js/course_detail.js' %}"></script>
 {% endblock %}
