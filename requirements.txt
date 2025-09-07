@@ -3,3 +3,4 @@ asgiref>=3.7
 sqlparse>=0.4
 pytz
 Pillow>=9.0
+gunicorn

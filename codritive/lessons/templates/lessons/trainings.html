@@ -76,28 +76,40 @@
                         </p>
                     </div>
                 </section>
-            <section class="hero glass">
-                <h1>FAQ</h1>
-                {% for course in faqs %}
-                        <div class="glass">
-                            <div class="faq-question">
-                                    <ul>
-                                        <li>
-                                            {{ course.question }}
-                                        </li>
-                                    </ul>
-                                <span class="icon" style="font-size: 40px; color:#FD7400">▼</span>
-                            </div>
-                            <div class="faq-answer" style="background-color:#FD7400">
-                                <ul>
-                                    <li>
-                                        {{ course.answer }}
-                                    </li>
-                                </ul>
-                            </div>
-                            {% endfor %}
-                        </div>
-            </section>
+<section class="hero glass faq-section">
+    <h1>FAQ</h1>
+    <div class="faq-wrapper">
+        <div class="faq-items">
+            {% for course in faqs %}
+            <div class="glass">
+                <div class="faq-question">
+                    <ul>
+                        <li>{{ course.question }}</li>
+                    </ul>
+                    <span class="icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <ul>
+                        <li>{{ course.answer }}</li>
+                    </ul>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Աջ կողմի իկոնները -->
+        <div class="faq-icons">
+            <div class="faq-icon">💡</div>
+            <div class="faq-icon">❔</div>
+            <div class="faq-icon">🔍</div>
+                        <div class="faq-icon">🧩</div>
+
+        </div>
+    </div>
+</section>
+
+
+
             <!-- #*/ dnel Karusel/* -->
             <section class="services-grid">
                 <div class="swiper mySwiper">
