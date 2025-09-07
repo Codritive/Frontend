@@ -1,62 +1,70 @@
 {% extends "core/base.html" %}
-{% block title %}About page{% endblock %}
-{% block content %}
-    <div>
-        <div class="container">
-            <div class="content-wrapper">
-                <section class="about-content">
-                    <div class="about-text glass">
-                        <h2>{{about.title}}</h2>
-                        <ul><li>
-                            {{about.description}}</p>
-                        </li></ul>
-                    </div>
-                    <div class="stats">
-                        <div class="stat-card glass">
-                            <div class="stat-number">10+</div>
-                            <div class="stat-label">Projects Completed</div>
-                        </div>
-                        <div class="stat-card glass">
-                            <div class="stat-number">50+</div>
-                            <div class="stat-label">Happy Clients</div>
-                        </div>
-                        <div class="stat-card glass">
-                            <div class="stat-number">Over 1</div>
-                            <div class="stat-label">Years Experience</div>
-                        </div>
-                        <div class="stat-card glass">
-                            <div class="stat-number">24/7</div>
-                            <div class="stat-label">Support Available</div>
-                        </div>
-                    </div>
-                </section>
+{% load static %}
 
-                <section class="team-section">
-                    <h2>Meet Our Team</h2>
-                    <div class="team-grid">
-                        {% for member in team_members %}
-                        <a href="{% url 'core:tutor' member.pk %}"></a>
-                            <div class="team-member glass">
-                                {% if member.image %}
-                                
-                                <img src="{{ member.image.url }}" class="team-avatar-img" style="height:160px">
-                                {% else %}
-                                <div class="team-avatar">👨‍💻</div>
-                                {% endif %}
-                                <h3>{{ member.name }}</h3>
-                                <ul class="role">{{ member.position }}</ul>
-                                <ul class="bio">
-                                    {{ member.bio }}
-                                </ul>
-                                <div class="team-social">
-                                    <a href="{% url 'core:tutor' member.pk %}" title="LinkedIn">💼</a>
-                                </div>
-                            </div>
-                            {% endfor %}
-                    </div>
-                </section>
+{% block title %}About page{% endblock %}
+
+{% block content %}
+
+<!-- Եթե այս էջի համար առանձնացված CSS ունես -->
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+<script src="{% static 'js/about.js' %}"></script>
+
+<div class="container">
+    <div class="content-wrapper">
+
+        <!-- About Content -->
+        <section class="about-content">
+            <div class="about-text glass">
+                <h2>{{ about.title }}</h2>
+                <p>{{ about.description }}</p>
             </div>
-        </div>
+
+            <!-- Stats -->
+            <div class="stats">
+                <div class="stat-card glass">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-card glass">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat-card glass">
+                    <div class="stat-number">Over 1</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card glass">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Support Available</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team-section">
+            <h2>Meet Our Team</h2>
+            <div class="team-grid">
+                {% for member in team_members %}
+                <div class="team-member glass">
+                    {% if member.image %}
+                        <img src="{{ member.image.url }}" class="team-avatar-img" style="height:160px">
+                    {% else %}
+                        <div class="team-avatar">👨‍💻</div>
+                    {% endif %}
+
+                    <h3>{{ member.name }}</h3>
+                    <p class="role">{{ member.position }}</p>
+                    <p class="bio">{{ member.bio }}</p>
+
+                    <div class="team-social">
+                        <a href="{% url 'core:tutor' member.pk %}" title="LinkedIn">💼</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
     </div>
+</div>
 
 {% endblock %}
