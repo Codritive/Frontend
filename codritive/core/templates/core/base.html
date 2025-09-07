@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Home Page{% endblock %}</title>
-    
+
+    <!-- Main CSS -->
     <link rel="stylesheet" href="{% static 'css/templatemo-glossy-touch.css' %}">
-
-
+    
+    <!-- Page-specific CSS -->
+    {% block extra_css %}{% endblock %}
 </head>
 <body>
     <div class="bg-shapes">
@@ -20,17 +22,18 @@
         <div class="shape"></div>
     </div>
 
-
+    <!-- Header / Navbar -->
     <header>
         <div class="container">
             <nav class="glass">
-                <div class="logo" >
+                <div class="logo">
                     {% if logo %}
                         <a href="{% url 'core:home' %}">
-                            <img src="{{ logo.image.url }}" style="height:80px">
+                            <img src="{{ logo.image.url }}" alt="Logo" style="height:80px">
                         </a>
+                    {% else %}
+                        <a href="{% url 'core:home' %}">Home</a>
                     {% endif %}
-                    
                 </div>
                 <div class="nav-links">
                     <a href="{% url 'core:about' %}">About</a>
@@ -41,13 +44,17 @@
             </nav>
         </div>
     </header>
+
+    <!-- Page Content -->
     {% block content %}{% endblock %}
+
+    <!-- Footer -->
     <div id="footer">
         <div class="container">
             <footer class="glass">
                 <div class="footer-content">
                     <div class="footer-links">
-                        <a href="#" >About Us</a>
+                        <a href="#">About Us</a>
                         <a href="#">Privacy Policy</a>
                         <a href="#">Terms of Service</a>
                         <a href="#">XML Sitemap</a>
@@ -61,9 +68,12 @@
             </footer>
         </div>
     </div>
-<script src="{% static 'js/templatemo-glossy-touch.js' %}"></script>
-</body>
-<style>
 
-</style>
+    <!-- JS Files -->
+    <script src="{% static 'js/templatemo-glossy-touch.js' %}"></script>
+
+    <!-- Page-specific JS -->
+    {% block extra_js %}{% endblock %}
+
+</body>
 </html>

@@ -1,66 +1,89 @@
 {% extends "core/base.html" %}
 {% load static %}
+
 {% block title %}Home Page{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
 {% block content %}
-    <div id="home" class="page active">
-        <div class="container">
-            <div class="content-wrapper">
-                <section class="hero glass">
-                    <h1>Welcome to Codritive</h1>
-                    <h2 class="text-color-white">Your Partner in Technology Solutions and IT Training</h2>
-                    <p>At Codritive, we specialize in delivering top-notch software development,
-                         quality assurance services, and professional IT training courses. 
-                         Our mission is to empower businesses and individuals with the skills 
-                         and solutions they need to thrive in the digital age.</p>
-                    <button class="cta-button">Enroll Now</button>
-                
-                </section>
-                <section class="hero glass">
-                    <div id="heroCarousel" class="carousel">
-                        <div class="carousel-slide active">
-                            <img src="{% static 'images/templatemo-futuristic-girl.jpg' %}" alt="Modern Technology Interaction" />
-                            <div class="hero-content">
-                                <h1>Welcome to the Future</h1>
-                                <p>Professional IT Training Courses taught by real industry experts.</p>
-                            </div>
+<div id="home" class="page active">
+    <div class="container">
+        <div class="content-wrapper">
+
+            <!-- Hero Section -->
+            <section class="hero glass">
+                <h1>Welcome to Codritive</h1>
+                <h2 class="text-color-white">Your Partner in Technology Solutions and IT Training</h2>
+                <p>
+                    At Codritive, we specialize in delivering top-notch software development,
+                    quality assurance services, and professional IT training courses. 
+                    Our mission is to empower businesses and individuals with the skills 
+                    and solutions they need to thrive in the digital age.
+                </p>
+                <a href="{% url 'core:training' %}" class="cta-button">Enroll Now</a>
+            </section>
+
+            <!-- Carousel Section -->
+            <section class="hero glass">
+                <div id="heroCarousel" class="carousel">
+                    {% for i in carousel_range %}
+                    <div class="carousel-slide {% if forloop.first %}active{% endif %}">
+                        <img src="{% static 'images/templatemo-futuristic-girl' %}{{ i }}.jpg" alt="Slide {{ i }}">
+                        <div class="hero-content">
+                            <h1>
+                                {% if i == 1 %}Welcome to the Future
+                                {% elif i == 2 %}Learn with Experts
+                                {% else %}Shape Your Career
+                                {% endif %}
+                            </h1>
+                            <p>
+                                {% if i == 1 %}
+                                    Professional IT Training Courses taught by real industry experts.
+                                {% elif i == 2 %}
+                                    Join our hands-on workshops and events for all skill levels.
+                                {% else %}
+                                    Explore courses in Web Development, Data Science, and more.
+                                {% endif %}
+                            </p>
                         </div>
-                        <div class="carousel-slide">
-                            <img src="{% static 'images/templatemo-futuristic-girl2.jpg' %}" alt="Cutting-edge Learning" />
-                            <div class="hero-content">
-                                <h1>Learn with Experts</h1>
-                                <p>Join our hands-on workshops and events for all skill levels.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="{% static 'images/templatemo-futuristic-girl3.jpg' %}" alt="Innovative Courses" />
-                            <div class="hero-content">
-                                <h1>Shape Your Career</h1>
-                                <p>Explore courses in Web Development, Data Science, and more.</p>
-                            </div>
-                        </div>
-                        <button class="carousel-control prev" onclick="moveSlide(-1)">&#10094;</button>
-                        <button class="carousel-control next" onclick="moveSlide(1)">&#10095;</button>
                     </div>
-                </section>
-                <section class="services-grid">
-                    <div class="service-card glass">
-                        <h3>Events</h3>
-                        <p>about the event</p>
-                        <li>location</li>
+                    {% endfor %}
+                    <button class="carousel-control prev" onclick="moveSlide(-1)">&#10094;</button>
+                    <button class="carousel-control next" onclick="moveSlide(1)">&#10095;</button>
+                </div>
+            </section>
+
+            <!-- Services Grid -->
+            <section class="services-grid">
+                <div class="service-card glass">
+                    <h3>Events</h3>
+                    <p>Learn more about our upcoming events:</p>
+                    <ul>
+                        <li>Location details</li>
                         <li>Wireframing & Prototyping</li>
                         <li>Visual Design & Branding</li>
                         <li>Responsive Design</li>
-                        <a href="#" class="cta-button">Learn More</a>
-                        <h3>Courses</h3>
-                        <p>about the courses</p>
+                    </ul>
+                    <a href="#" class="cta-button">Learn More</a>
+
+                    <h3>Courses</h3>
+                    <p>Explore our professional courses:</p>
+                    <ul>
                         <li>Web Development</li>
                         <li>Data Science</li>
                         <li>Machine Learning</li>
-                        <a href="#" class="cta-button">Learn More</a>
-                    </div>
-                </section>
-                
-            </div>
+                    </ul>
+                    <a href="#" class="cta-button">Learn More</a>
+                </div>
+            </section>
+
         </div>
     </div>
-    {% endblock %}
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock %}
