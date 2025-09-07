@@ -11,11 +11,13 @@ https://templatemo.com/tm-592-glossy-touch
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    button[type="submit"] {
-        font-family: inherit;
-        font-size: 16px;
-    }
 }
+
+button[type="submit"] {
+    font-family: inherit;
+    font-size: 16px;
+}
+
 
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -912,10 +914,7 @@ ul li {
 li {
     margin-bottom: 5px;
 }
-.swiper { width: 100%; padding: 40px 0; }
-.swiper-slide { display: flex; justify-content: center; }
-.swiper-button-next, .swiper-button-prev { color: #FD7400; }
-.swiper-pagination-bullet-active { background: #FD7400; }
+
 /* Responsive design */
 @media (max-width: 1024px) {
     .team-grid {
@@ -992,4 +991,173 @@ li {
     .logo {
         font-size: 22px;
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+.faq-section .glass {
+    display: flex;
+    flex-direction: column; 
+    width: 100%; 
+    box-sizing: border-box;
+    padding: 5px; 
+    margin-bottom: 10px;
+    border-radius: 12px; 
+    background-color: rgba(255, 255, 255, 0.05); 
+}
+
+.faq-question {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 15px;
+    height: 70px; 
+    box-sizing: border-box;
+}
+
+.faq-answer {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease, padding 0.6s ease;
+    box-sizing: border-box;
+    padding: 0 20px;
+    color: white;
+    background-color: #FD7400;
+}
+.faq-answer.show {
+    max-height: 150px;
+    padding: 10px 20px;
+}
+
+.icon.rotate {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+.faq-section .icon {
+    font-size: 1.3em;
+    transition: transform 0.3s ease;
+}
+
+
+.faq-section .glass:nth-of-type(1) .icon { color: #FD7400; }
+.faq-section .glass:nth-of-type(2) .icon { color: #00A8E8; }
+.faq-section .glass:nth-of-type(3) .icon { color: #32CD32; }
+.faq-section .glass:nth-of-type(n+4) .icon { color: #008000; }
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+ul li {
+    color: white;
+    margin: 14px 0;
+    font-size: 14px;
+}
+
+/* ===== թազա դրած աջ կողմի իկոնների մաս ===== */
+.faq-wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    position: relative;
+}
+
+.faq-icons {
+   
+    width: 700px; 
+    height: 100%;
+    pointer-events: none; 
+}
+
+.faq-icon {
+    position: absolute;
+    width: 80px;     
+    height: 80px;  
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 94px;    
+    cursor: pointer;
+    animation: float 3s ease-in-out infinite;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.faq-icon:hover {
+    transform: scale(1.2);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+/* =====իկոնների տեղը ու չափերը փոխել աջ ձախ ===== */
+.faq-icon:nth-child(1) { top: 5%; right: 20%; animation-delay: 0s; }
+.faq-icon:nth-child(2) { top: 25%; right: 35%; animation-delay: 0.5s; }
+.faq-icon:nth-child(3) { top: -25%; right: 10%; animation-delay: 1s; }
+.faq-icon:nth-child(4) { top: 80%; right: 20%; animation-delay: 1.5s; }
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+/* ===== Hero / divik / Karusel ===== */
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+.divik {
+    float: right;
+}
+
+
+
+
+
+
+
+.swiper {
+  width: 100%;
+  padding: 40px 0;
+}
+
+.swiper-wrapper {
+  display: flex; /* Սա ոչ միշտ պետք է, Swiper ինքն է կարգավորում */
+}
+
+.swiper-slide {
+  flex-shrink: 0;   
+  width: 300px;       
+  display: flex;
+  justify-content: center;
+}
+
+.service-card {
+  width: 100%;
+  min-height: 220px;
+  border-radius: 12px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  text-align: center;
 }
