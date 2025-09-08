@@ -1,1 +1,10 @@
-<h1>{{ team_member }}</h1>
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}{{ team_member }}{% endblock %}
+
+{% block content %}
+    <section class="hero glass">
+        <h1>{{ team_member }}</h1>
+    </section>
+{% endblock %}
