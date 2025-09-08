@@ -47,7 +47,9 @@
                 {% for member in team_members %}
                 <div class="team-member glass">
                     {% if member.image %}
+                    <a href="{% url 'core:tutor' member.pk %}">
                         <img src="{{ member.image.url }}" class="team-avatar-img" style="height:160px">
+                    </a>
                     {% else %}
                         <div class="team-avatar">👨‍💻</div>
                     {% endif %}
