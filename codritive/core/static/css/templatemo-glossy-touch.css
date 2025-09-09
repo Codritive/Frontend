@@ -38,16 +38,6 @@ body {
     overflow-x: hidden;
     overflow: scroll;
 }
-
-
-
-
-
-
-
-
-
-
 .bg-shapes {
     position: fixed;
     top: 0;
@@ -207,7 +197,6 @@ body {
     transform: translateY(-5px);
     box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
 }
-
 
 header {
     padding: 20px;
@@ -803,7 +792,6 @@ ul li {
     margin-top: -10;
 }
 
-/* carusel design */
 .faq-container {
     max-width: 800px;
     margin: 20px auto;
@@ -972,32 +960,6 @@ li {
     }
 }
 
-
-.faq-container {
-    max-width: 900px;
-    margin: 20px auto;
-    background: #000000;
-    padding: 20px;
-    border-radius: 8px;
-    font-family: Arial, sans-serif;
-}
-.faq-item {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    border-bottom: 1px solid #008000;
-    padding: 15px 0;
-}
-
-
-.faq-question .icon {
-    transition: transform 0.3s ease;
-}
-
-
-.faq-question.active .icon {
-    transform: rotate(180deg);
-}
 .faq-section .glass {
     display: flex;
     flex-direction: column; 
@@ -1017,30 +979,25 @@ li {
     cursor: pointer;
     font-weight: bold;
     font-size: 1.1em;
-    white-space: nowrap; 
-    text-overflow: ellipsis;
     padding: 15px;
     height: 70px; 
     box-sizing: border-box;
 }
 
 .faq-answer {
-     width: 100%; 
+    width: 100%;
     max-height: 0;
-     overflow: hidden;
-      transition: max-height 0.6s ease, padding 0.6s ease;
-       box-sizing: border-box;
-        padding: 0 20px; 
-        color: white;
-        background-color: #FD7400;
-         display: flex;
-         align-items: center; }
-         
+    overflow: hidden;
+    transition: max-height 0.6s ease, padding 0.6s ease;
+    box-sizing: border-box;
+    padding: 0 20px;
+    color: white;
+    background-color: #FD7400;
+}
 .faq-answer.show {
     max-height: 150px;
     padding: 10px 20px;
 }
-
 
 .icon.rotate {
     transform: rotate(180deg);
@@ -1125,8 +1082,6 @@ ul li {
     text-align: center;
 }
 
-
-
 .swiper {
   width: 100%;
   padding: 40px 0;
@@ -1134,7 +1089,6 @@ ul li {
 
 .swiper-wrapper {
   display: flex;
-  gap: 20px;
 }
 
 .swiper-slide {
@@ -1151,13 +1105,4 @@ ul li {
   padding: 20px;
   background: rgba(255, 255, 255, 0.05);
   text-align: center;
-}
-
-.swiper-button-next, 
-.swiper-button-prev { 
-  color: #FD7400; 
-}
-
-.swiper-pagination-bullet-active { 
-  background: #FD7400; 
 }
