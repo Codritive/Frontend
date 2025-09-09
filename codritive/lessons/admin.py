@@ -1,10 +1,12 @@
 from django.contrib import admin
 from .models import Course, FAQ
 from core.models import Our_Team
-
+class FAQ_inline(admin.StackedInline):
+    model = FAQ
+    extra = 1
 class CourseAdmin(admin.ModelAdmin):
     list_display = ('title', 'category', 'tutor')
-
+    inlines = [FAQ_inline]
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
         if db_field.name == "tutor":
             if request.resolver_match.kwargs.get('object_id'):
