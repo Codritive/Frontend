@@ -1,37 +1,53 @@
 {% extends "core/base.html" %}
 {% load static %}
+
 {% block title %}Training Courses{% endblock %}
 
 {% block content %}
- <div>
-        <div class="container">
-            <div class="content-wrapper">
-                <section class="hero glass">
-                    <div class="hero-image">
-                        <img src="{% static 'images/templatemo-futuristic-girl.jpg' %}" alt="Modern Technology Interaction" />
-                    </div>
-                    <h1>Our Training Courses</h1>
-                    <p>Explore our comprehensive IT training programs designed to equip you with the skills needed for the future.</p>
-                </section>
-                
-                <section class="services-grid">
-                    {% for course in courses %}
-                    <a href="{% url 'lessons:course_detail' course.pk %}" class="service-card-link">
-                        <div class="service-card glass">
-                            <h3>{{ course.title }}</h3>
-                            <p>{{ course.category }}</p>
-                            {% if course.image %}
-                                <img src="{{ course.image.url }}" alt="{{ course.title }}" class="course-image" style="height: 160px;">
-                            {% endif %}
+<div class="training-page">
+    <div class="container">
+        <div class="content-wrapper">
+
+            <!-- Hero Section -->
+            <section class="hero glass">
+                <div class="hero-image">
+                    <img src="{% static 'images/templatemo-futuristic-girl.jpg' %}" alt="Modern Technology Interaction" />
+                </div>
+                <h1>Our Training Courses</h1>
+                <p>
+                    Explore our comprehensive IT training programs designed to equip you
+                    with the skills needed for the future.
+                </p>
+            </section>
+
+            <!-- Courses Grid -->
+            <section class="services-grid">
+                {% for course in courses %}
+                <a href="{% url 'lessons:course_detail' course.pk %}" class="service-card-link">
+                    <div class="service-card glass">
+                        <h3>{{ course.title }}</h3>
+                        <p>{{ course.category }}</p>
+
+                        {% if course.image %}
+                        <div class="course-image-wrapper">
+                            <img src="{{ course.image.url }}" alt="{{ course.title }}" class="course-image" style="height: 160px;">
+                        </div>
+                        {% endif %}
+
+                        <ul>
                             <li>{{ course.short_description }}</li>
                             <li>Wireframing & Prototyping</li>
                             <li>Visual Design & Branding</li>
                             <li>Responsive Design</li>
-                        </div>
-                    </a>
-                    {% endfor %}
-                </section>
-            </div>
+                        </ul>
+                    </div>
+                </a>
+                {% empty %}
+                <p>No courses available at the moment. Please check back later.</p>
+                {% endfor %}
+            </section>
+
         </div>
     </div>
+</div>
 {% endblock %}

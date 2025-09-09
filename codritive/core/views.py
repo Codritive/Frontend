@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Logo, About, Contact_Us, Our_Team, Get_InTouch
 from lessons.models import Course
 # Create your views here.
@@ -17,7 +17,14 @@ def about(request):
     return render(request, 'core/about.html', {
         'about': about_info,
         'team_members': team_members
+
         })
+
+def tutor_detail(request, pk):
+    team_member = get_object_or_404(Our_Team, pk=pk)
+    return render(request, 'core/tutor.html', {
+        'team_member': team_member
+    })
 
 def contact_us(request):
     contact_info = Contact_Us.objects.first()
