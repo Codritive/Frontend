@@ -31,14 +31,23 @@ body {
         #8b5a8c 85%,
         #a0616a 100%
         );
-    background-color: transparent; /* Or try #000, #111, etc. */
+    background-color: transparent;
     background-color: #1A1A1A !important;
     background-image: none !important;
     min-height: 100vh;
     overflow-x: hidden;
     overflow: scroll;
 }
-/* Animated background elements */
+
+
+
+
+
+
+
+
+
+
 .bg-shapes {
     position: fixed;
     top: 0;
@@ -48,161 +57,143 @@ body {
     z-index: -1;
     overflow: hidden;
     min-height: 100%;
-    background-color: transparent; /* Change this to your desired background */
+    background-color: transparent;
 }
+
 .shape {
     position: absolute;
-    animation: float 6s ease-in-out infinite;
     width: 0;
     height: 0;
     background: none;
-    animation: float 6s ease-in-out infinite;
     border-left: 60px solid transparent;
     border-right: 60px solid transparent;
-    border-bottom: 100px solid rgba(245, 247, 246, 0.904); /* triangle color */
-    box-shadow: none; /* optional: remove shadow or add custom */
+    border-bottom: 100px solid rgba(245, 247, 246, 0.904);
+    border-radius: 20px;
+    animation: float 6s ease-in-out infinite, spin 12s linear infinite;
 }
 
-.rotate {
-    transform: rotate(180deg);
+
+/*վեր ու վար էղնի*/
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
 }
+
+/* աննդատ ֆռռա 360 աստ․ */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* shapes */
 .shape:nth-child(1) {
     width: 120px;
     height: 80px;
-    border-radius: 15px;
     top: 20%;
     left: 10%;
-    animation-delay: 0s;
-    transform: rotate(15deg);
     border-bottom: 100px solid #FD7400;
+    animation-delay: 0s, 0s;
 }
 .shape:nth-child(2) {
     width: 90px;
     height: 140px;
-    border-radius: 12px;
     top: 60%;
     right: 15%;
-    animation-delay: 2s;
-    transform: rotate(-20deg);
-    border-bottom: 100px solid #7ED956; /* green */
+    border-bottom: 100px solid #7ED956;
+    animation-delay: 2s, 1s;
 }
 .shape:nth-child(3) {
     width: 100px;
     height: 60px;
-    border-radius: 10px;
     bottom: 20%;
     left: 20%;
-    animation-delay: 4s;
-    transform: rotate(25deg);
-    border-bottom: 100px solid #7ED956; /* green */
+    border-bottom: 100px solid #7ED956;
+    animation-delay: 4s, 2s;
 }
 .shape:nth-child(4) {
     width: 80px;
     height: 120px;
-    border-radius: 8px;
     top: 10%;
     right: 30%;
-    animation-delay: 1s;
-    transform: rotate(-10deg);
     border-bottom: 100px solid #FD7400; 
+    animation-delay: 1s, 0.5s;
 }
 .shape:nth-child(5) {
     width: 110px;
     height: 70px;
-    border-radius: 14px;
     bottom: 40%;
     right: 20%;
-    animation-delay: 3s;
-    transform: rotate(30deg);
     border-bottom: 100px solid #33C0CB;
+    animation-delay: 3s, 1.5s;
 }
 .shape:nth-child(6) {
     width: 95px;
     height: 95px;
-    border-radius: 20px;
     top: 33%;
     left: 5%;
-    animation-delay: 5s;
-    transform: rotate(-15deg);
     border-bottom: 100px solid #33C0CB;
-
+    animation-delay: 5s, 3s;
 }
 .shape:nth-child(7) {
     width: 5px;
     height: 60px;
-    border-radius: 33px;
     top: 40%;
     left: 5%;
-    animation-delay: 5s;
-    transform: rotate(-15deg);
-    border-bottom: 100px solid #FD7400; /* red */
+    border-bottom: 100px solid #FD7400;
+    animation-delay: 5s, 2s;
 }
 .shape:nth-child(8) {
     width: 20px;
     height: 50px;
-    border-radius: 45px;
     top: 15%;
     left: 5%;
-    animation-delay: 5s;
-    transform: rotate(-15deg);
-    border-bottom: 100px solid #7ED956; /* green */
+    border-bottom: 100px solid #7ED956;
+    animation-delay: 5s, 4s;
 }
 .shape:nth-child(9) {
     width: 30px;
     height: 40px;
-    border-radius: 50px;
     top: 45%;
     left: 5%;
-    animation-delay: 5s;
-    transform: rotate(-15deg);
-    border-bottom: 100px solid #7ED956; /* yellow */
+    border-bottom: 100px solid #7ED956;
+    animation-delay: 5s, 2.5s;
 }
 .shape:nth-child(10) {
     width: 40px;
     height: 30px;
-    border-radius: 30px;
     top: 35%;
     left: 5%;
-    animation-delay: 5s;
-    transform: rotate(-15deg);
-    border-bottom: 100px solid #FD7400; /* blue */
+    border-bottom: 100px solid #FD7400;
+    animation-delay: 5s, 3.5s;
 }
 .shape:nth-child(11) {
     width: 50px;
     height: 20px;
-    border-radius: 35px;
     top: 10%;
     left: 5%;
-    animation-delay: 5s;
-    transform: rotate(-15deg);
-    border-bottom: 100px solid #33C0CB; /* pink */
+    border-bottom: 100px solid #33C0CB;
+    animation-delay: 5s, 1s;
 }
 .shape:nth-child(12) {
     width: 60px;
     height: 10px;
-    border-radius: 40px;
     top: 30%;
     left: 5%;
-    animation-delay: 5s;
-    transform: rotate(-15deg);
-    border-bottom: 100px solid #33C0CB; ; /* dark blue */
+    border-bottom: 100px solid #33C0CB;
+    animation-delay: 5s, 2.2s;
 }
 
-@keyframes float {
-    0%,
-    100% {
-        transform: translateY(0px) rotate(var(--start-rotation, 0deg));
-    }
-    50% {
-        transform: translateY(-20px)
-            rotate(calc(var(--start-rotation, 0deg) + 180deg));
-    }
-}
-/* Glass container styles */
+/* ապակյա էֆեկտով բլոկ */
 .glass {
     background-color: #0000008c;
-
-    
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
@@ -215,10 +206,9 @@ body {
 .glass:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
-    
 }
 
-/* Header styles */
+
 header {
     padding: 20px;
 }
@@ -226,7 +216,6 @@ header {
     max-width: 1200px;
     margin: 0 auto;
 }
-/* Navigation styles */
 nav {
     display: flex;
     justify-content: space-between;
@@ -242,8 +231,8 @@ nav {
     align-items: center;
     gap: 15px;
     cursor: pointer;
-    height: 40px; /* Adjust height as needed */
-    width: auto; /* Maintain aspect ratio */
+    height: 40px;
+    width: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -291,7 +280,6 @@ nav {
     background: rgba(255, 255, 255, 0.1);
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
-/* Page system */
 .page {
     display: none;
     min-height: 100vh;
@@ -300,24 +288,22 @@ nav {
 .page.active {
     display: block;
 }
-/* Content wrapper to contain page content */
 .content-wrapper {
     min-height: calc(100vh - 300px);
 }
-/* Home page styles */
 
 .hero {
     position: relative;
     align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Push content to the top */
+    justify-content: flex-start;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     margin-bottom: 40px;
     padding: 60px 40px;
-    align-items: flex-start;         /* Center horizontally */
-    padding-top: 20px;           /* Space from the very top */
+    align-items: flex-start;
+    padding-top: 20px;
 }
 .hero-text {
     position: absolute;
@@ -390,12 +376,12 @@ nav {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 .rect-btn {
-  background-color: rgba(255, 255, 255, 0.2);/* blue background */
-  color: white;              /* white text */
-  padding: 10px 20px;        /* rectangle shape */
-  border: none;              /* remove border */
-  border-radius: 0;          /* makes it a rectangle */
-  cursor: pointer;           /* show pointer on hover */
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
 }
 .rect-btn:hover {
   background-color: #0056b3;
@@ -449,7 +435,6 @@ ul li {
 .divik  {
     float: right;
 }
-/* About page styles */
 .about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -494,7 +479,6 @@ ul li {
     color: rgba(255, 255, 255, 0.8);
     margin-top: 10px;
 }
-/* Team section styles */
 .team-section {
     margin-bottom: 60px;
 }
@@ -538,8 +522,8 @@ ul li {
     object-fit: cover;
     width: 160px;
     height: 160px;
-    border: 2px solid #fff; /* optional: adds a white border */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* optional: subtle shadow */
+    border: 2px solid #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 .team-member:hover .team-avatar {
     border-color: rgba(255, 255, 255, 0.5);
@@ -586,7 +570,6 @@ ul li {
     transform: translateY(-3px);
     color: white;
 }
-/* Services page styles */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -638,7 +621,6 @@ ul li {
     left: 0;
     color: rgba(255, 255, 255, 0.9);
 }
-/* Contact page styles */
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -777,7 +759,6 @@ ul li {
     opacity: 0.6;
     margin-top: 20px;
 }
-/* Footer styles */
 #footer {
     margin-top: 60px;
     padding: 30px 0;
@@ -823,6 +804,61 @@ ul li {
 }
 
 /* carusel design */
+.faq-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #000000;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+}
+.faq-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-bottom: 1px solid #008000;
+    padding: 15px 0;
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 1.1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    cursor: pointer;
+    max-height: 100px;
+}
+.faq-question .icon {
+    transition: transform 0.3s ease;
+}
+
+
+.faq-question.active .icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease;
+    background: #008000;
+    color: white;
+    padding: 0 15px;
+}
+.faq-answer.show {
+                max-height: 70px;
+                padding: 15px;
+            }
+.faq-answer p {
+    padding: 10px 0;
+}
 .carousel {
     position: relative;
     overflow: hidden;
@@ -860,14 +896,12 @@ li {
     margin-bottom: 5px;
 }
 
-/* Responsive design */
 @media (max-width: 1024px) {
     .team-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 @media (max-width: 768px) {
-    /* Adjust padding for mobile */
     .page {
         padding: 30px 20px 20px;
     }
@@ -939,16 +973,6 @@ li {
 }
 
 
-
-
-
-
-
-
-
-
-
-
 .faq-container {
     max-width: 900px;
     margin: 20px auto;
@@ -974,15 +998,6 @@ li {
 .faq-question.active .icon {
     transform: rotate(180deg);
 }
-
-
-
-
-
-
-
-
-
 .faq-section .glass {
     display: flex;
     flex-direction: column; 
@@ -1054,7 +1069,6 @@ ul li {
     font-size: 14px;
 }
 
-/* ===== թազա դրած աջ կողմի իկոնների մաս ===== */
 .faq-wrapper {
     display: flex;
     gap: 20px;
@@ -1090,7 +1104,6 @@ ul li {
     box-shadow: 0 6px 15px rgba(0,0,0,0.4);
 }
 
-/* =====իկոնների տեղը ու չափերը փոխել աջ ձախ ===== */
 .faq-icon:nth-child(1) { top: 5%; right: 20%; animation-delay: 0s; }
 .faq-icon:nth-child(2) { top: 25%; right: 35%; animation-delay: 0.5s; }
 .faq-icon:nth-child(3) { top: -25%; right: 10%; animation-delay: 1s; }
@@ -1101,7 +1114,6 @@ ul li {
     100% { transform: translateY(0); }
 }
 
-/* ===== Hero / divik / Karusel ===== */
 .hero-text {
     position: absolute;
     top: 50%;
@@ -1112,13 +1124,6 @@ ul li {
     gap: 20px;
     text-align: center;
 }
-.divik {
-    float: right;
-}
-
-
-
-
 
 
 
@@ -1128,7 +1133,8 @@ ul li {
 }
 
 .swiper-wrapper {
-  display: flex; /* Սա ոչ միշտ պետք է, Swiper ինքն է կարգավորում */
+  display: flex;
+  gap: 20px;
 }
 
 .swiper-slide {
@@ -1146,7 +1152,12 @@ ul li {
   background: rgba(255, 255, 255, 0.05);
   text-align: center;
 }
-.swiper { width: 100%; padding: 40px 0; }
-.swiper-slide { display: flex; justify-content: center; }
-.swiper-button-next, .swiper-button-prev { color: #FD7400; }
-.swiper-pagination-bullet-active { background: #FD7400; }
+
+.swiper-button-next, 
+.swiper-button-prev { 
+  color: #FD7400; 
+}
+
+.swiper-pagination-bullet-active { 
+  background: #FD7400; 
+}
