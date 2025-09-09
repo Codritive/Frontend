@@ -89,37 +89,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// ==================== Carousel ====================
-let currentSlide = 0;
-const slides = document.querySelectorAll('#heroCarousel .carousel-slide');
-function showSlide(index){
-    slides.forEach((s,i)=>s.classList.toggle('active', i===index));
-}
-function moveSlide(step){
-    currentSlide = (currentSlide+step+slides.length)%slides.length;
-    showSlide(currentSlide);
-}
-setInterval(()=>moveSlide(1),5000);
-showSlide(currentSlide);
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const swiper = new Swiper(".mySwiper", {
-        slidesPerView: 3,       // միաժամանակ 3 քարտ կողք կողքի
-        spaceBetween: 30,       // քարտերի արանքում բացատ
-        loop: true,             // անընդհատ թերթվող
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        breakpoints: {
-            320: { slidesPerView: 1, spaceBetween: 10 },   // փոքր էկրանների համար
-            768: { slidesPerView: 2, spaceBetween: 20 },   // միջին էկրանների համար
-            1024: { slidesPerView: 3, spaceBetween: 30 },  // մեծ էկրանների համար
-        }
-    });
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      1024: { slidesPerView: 3 },
+      768: { slidesPerView: 2 },
+      480: { slidesPerView: 1 },
+    },
 });

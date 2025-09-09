@@ -822,61 +822,6 @@ ul li {
     margin-top: -10;
 }
 
-.faq-container {
-    max-width: 800px;
-    margin: 20px auto;
-    background: #000000;
-    padding: 20px;
-    border-radius: 8px;
-    font-family: Arial, sans-serif;
-}
-.faq-item {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    border-bottom: 1px solid #008000;
-    padding: 15px 0;
-}
-
-.faq-question {
-    width: 100%;
-    background: none;
-    border: none;
-    text-align: left;
-    padding: 15px;
-    font-weight: bold;
-    font-size: 1.1em;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0;
-    cursor: pointer;
-    max-height: 100px;
-}
-.faq-question .icon {
-    transition: transform 0.3s ease;
-}
-
-
-.faq-question.active .icon {
-    transform: rotate(180deg);
-}
-
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 1s ease;
-    background: #008000;
-    color: white;
-    padding: 0 15px;
-}
-.faq-answer.show {
-                max-height: 70px;
-                padding: 15px;
-            }
-.faq-answer p {
-    padding: 10px 0;
-}
 /* carusel design */
 .carousel {
     position: relative;
@@ -1003,6 +948,41 @@ li {
 
 
 
+
+.faq-container {
+    max-width: 900px;
+    margin: 20px auto;
+    background: #000000;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+}
+.faq-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-bottom: 1px solid #008000;
+    padding: 15px 0;
+}
+
+
+.faq-question .icon {
+    transition: transform 0.3s ease;
+}
+
+
+.faq-question.active .icon {
+    transform: rotate(180deg);
+}
+
+
+
+
+
+
+
+
+
 .faq-section .glass {
     display: flex;
     flex-direction: column; 
@@ -1022,25 +1002,30 @@ li {
     cursor: pointer;
     font-weight: bold;
     font-size: 1.1em;
+    white-space: nowrap; 
+    text-overflow: ellipsis;
     padding: 15px;
     height: 70px; 
     box-sizing: border-box;
 }
 
 .faq-answer {
-    width: 100%;
+     width: 100%; 
     max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.6s ease, padding 0.6s ease;
-    box-sizing: border-box;
-    padding: 0 20px;
-    color: white;
-    background-color: #FD7400;
-}
+     overflow: hidden;
+      transition: max-height 0.6s ease, padding 0.6s ease;
+       box-sizing: border-box;
+        padding: 0 20px; 
+        color: white;
+        background-color: #FD7400;
+         display: flex;
+         align-items: center; }
+         
 .faq-answer.show {
     max-height: 150px;
     padding: 10px 20px;
 }
+
 
 .icon.rotate {
     transform: rotate(180deg);
@@ -1161,3 +1146,7 @@ ul li {
   background: rgba(255, 255, 255, 0.05);
   text-align: center;
 }
+.swiper { width: 100%; padding: 40px 0; }
+.swiper-slide { display: flex; justify-content: center; }
+.swiper-button-next, .swiper-button-prev { color: #FD7400; }
+.swiper-pagination-bullet-active { background: #FD7400; }
