@@ -132,54 +132,6 @@ body {
     border-bottom: 100px solid #33C0CB;
     animation-delay: 5s, 3s;
 }
-.shape:nth-child(7) {
-    width: 5px;
-    height: 60px;
-    top: 40%;
-    left: 5%;
-    border-bottom: 100px solid #FD7400;
-    animation-delay: 5s, 2s;
-}
-.shape:nth-child(8) {
-    width: 20px;
-    height: 50px;
-    top: 15%;
-    left: 5%;
-    border-bottom: 100px solid #7ED956;
-    animation-delay: 5s, 4s;
-}
-.shape:nth-child(9) {
-    width: 30px;
-    height: 40px;
-    top: 45%;
-    left: 5%;
-    border-bottom: 100px solid #7ED956;
-    animation-delay: 5s, 2.5s;
-}
-.shape:nth-child(10) {
-    width: 40px;
-    height: 30px;
-    top: 35%;
-    left: 5%;
-    border-bottom: 100px solid #FD7400;
-    animation-delay: 5s, 3.5s;
-}
-.shape:nth-child(11) {
-    width: 50px;
-    height: 20px;
-    top: 10%;
-    left: 5%;
-    border-bottom: 100px solid #33C0CB;
-    animation-delay: 5s, 1s;
-}
-.shape:nth-child(12) {
-    width: 60px;
-    height: 10px;
-    top: 30%;
-    left: 5%;
-    border-bottom: 100px solid #33C0CB;
-    animation-delay: 5s, 2.2s;
-}
 
 /* ապակյա էֆեկտով բլոկ */
 .glass {
