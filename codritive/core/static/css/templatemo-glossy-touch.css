@@ -58,7 +58,7 @@ body {
     border-left: 60px solid transparent;
     border-right: 60px solid transparent;
     border-bottom: 100px solid rgba(245, 247, 246, 0.904);
-    border-radius: 20px;
+    border-radius: 0px;
     animation: float 6s ease-in-out infinite, spin 12s linear infinite;
 }
 
