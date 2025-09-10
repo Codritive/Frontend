@@ -64,36 +64,33 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="hero glass faq-section">
-        <h1>FAQ</h1>
-        <div class="faq-wrapper">
-            <div class="faq-items">
-                {% for course in faqs %}
-                <div class="glass">
-                    <div class="faq-question">
-                        <ul>
-                            <li>{{ course.question }}</li>
-                        </ul>
-                        <span class="icon">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <ul>
-                            <li>{{ course.answer }}</li>
-                        </ul>
+<section class="hero glass faq-section">
+    <h1>FAQ</h1>
+    <div class="faq-wrapper">
+        <div class="faq-items">
+            {% for course in faqs %}
+            <div class="glass faq-item">
+                <div class="faq-question">
+                    <span>{{ course.question }}</span>
+                    <span class="icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-content">
+                        <p>{{ course.answer }}</p>
                     </div>
                 </div>
-                {% endfor %}
             </div>
-
-            <div class="faq-icons">
-                <div class="faq-icon">💡</div>
-                <div class="faq-icon">❔</div>
-                <div class="faq-icon">🔍</div>
-                <div class="faq-icon">🧩</div>
-            </div>
+            {% endfor %}
         </div>
-    </section>
 
+        <div class="faq-icons">
+            <div class="faq-icon">💡</div>
+            <div class="faq-icon">❔</div>
+            <div class="faq-icon">🔍</div>
+            <div class="faq-icon">🔍</div>
+        </div>
+    </div>
+</section>
     <!--  Carousel -->
          
 <section class="carousel-section">

@@ -87,25 +87,27 @@ let currentPage = 'home';
     }`;
     document.head.appendChild(fadeStyle);
 // ==================== FAQ ====================
-    document.addEventListener('DOMContentLoaded', () => {
-        const faqQuestions = document.querySelectorAll('.faq-section .faq-question');
-        faqQuestions.forEach(q => {
-            q.addEventListener('click', () => {
-                const answer = q.nextElementSibling;
-                q.classList.toggle('active');
-                if (q.classList.contains('active')){
-                    answer.style.maxHeight = answer.scrollHeight + "px";
-                    answer.style.padding = "15px 20px";
-                } else {
-                    answer.style.maxHeight = 0;
-                    answer.style.padding = "0 20px";
-                }
-                const arrow = q.querySelector('.icon');
-                if (arrow) arrow.classList.toggle('rotate');
-            });
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqQuestions = document.querySelectorAll('.faq-section .faq-question');
+
+    faqQuestions.forEach(q => {
+        q.addEventListener('click', () => {
+            const answer = q.nextElementSibling;
+            q.classList.toggle('active');
+
+            if (q.classList.contains('active')){
+                answer.classList.add('show');
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            } else {
+                answer.classList.remove('show');
+                answer.style.maxHeight = 0;
+            }
+
+            const arrow = q.querySelector('.icon');
+            if (arrow) arrow.classList.toggle('rotate');
         });
     });
-
+});
 
     // carusel block
 const wrapper = document.querySelector('.carousel-wrapper');
