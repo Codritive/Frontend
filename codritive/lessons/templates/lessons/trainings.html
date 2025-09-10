@@ -85,7 +85,6 @@
                 {% endfor %}
             </div>
 
-            <!-- Right side icons -->
             <div class="faq-icons">
                 <div class="faq-icon">💡</div>
                 <div class="faq-icon">❔</div>
@@ -95,32 +94,29 @@
         </div>
     </section>
 
-    <!-- Courses Carousel -->
-         <section class="services-grid">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        {% for course in courses %}
-                            <div class="swiper-slide">
-                                <a href="{% url 'lessons:course_detail' course.pk %}" class="service-card-link">
-                                    <div class="service-card glass">
-                                        <h3>{{ course.title }}</h3>
-                                        <p>{{ course.category }}</p>
-                                        {% if course.image %}
-                                            <img src="{{ course.image.url }}" alt="{{ course.title }}" class="course-image" style="height: 160px;">
-                                        {% endif %}
-                                        <li>{{ course.short_description }}</li>
-                                    </div>
-                                </a>
-                            </div>
-                            {% endfor %}
-                    </div>
+    <!--  Carousel -->
+         
+<section class="carousel-section">
+  <div class="carousel-container">
+    <button class="carousel-btn prev">‹</button>
+    <div class="carousel-wrapper">
+      {% for course in courses %}
+      <a href="{% url 'lessons:course_detail' course.pk %}" class="carousel-item-link">
+        <div class="service-card glass">
+          <h3>{{ course.title }}</h3>
+          <p>{{ course.category }}</p>
+          {% if course.image %}
+          <img src="{{ course.image.url }}" alt="{{ course.title }}" style="height: 160px;">
+          {% endif %}
+          <li>{{ course.short_description }}</li>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <button class="carousel-btn next">›</button>
+  </div>
+</section>
 
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-
-                    <div class="swiper-pagination"></div>
-                </div>
-            </section>
 
 </div>
     <script src="{% static 'js/templatemo-glossy-touch.js' %}"></script>
