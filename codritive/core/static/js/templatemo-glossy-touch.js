@@ -87,44 +87,60 @@ let currentPage = 'home';
     }`;
     document.head.appendChild(fadeStyle);
 // ==================== FAQ ====================
-    document.addEventListener('DOMContentLoaded', () => {
-        const faqQuestions = document.querySelectorAll('.faq-section .faq-question');
-        faqQuestions.forEach(q => {
-            q.addEventListener('click', () => {
-                const answer = q.nextElementSibling;
-                q.classList.toggle('active');
-                if (q.classList.contains('active')){
-                    answer.style.maxHeight = answer.scrollHeight + "px";
-                    answer.style.padding = "15px 20px";
-                } else {
-                    answer.style.maxHeight = 0;
-                    answer.style.padding = "0 20px";
-                }
-                const arrow = q.querySelector('.icon');
-                if (arrow) arrow.classList.toggle('rotate');
-            });
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqQuestions = document.querySelectorAll('.faq-section .faq-question');
+
+    faqQuestions.forEach(q => {
+        q.addEventListener('click', () => {
+            const answer = q.nextElementSibling;
+            q.classList.toggle('active');
+
+            if (q.classList.contains('active')){
+                answer.classList.add('show');
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            } else {
+                answer.classList.remove('show');
+                answer.style.maxHeight = 0;
+            }
+
+            const arrow = q.querySelector('.icon');
+            if (arrow) arrow.classList.toggle('rotate');
         });
     });
+});
 
-    var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 3,
-        spaceBetween: 20,
-        loop: true,
-        autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-        },
-        pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-        },
-        navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-        },
-        breakpoints: {
-        1024: { slidesPerView: 3 },
-        768: { slidesPerView: 2 },
-        480: { slidesPerView: 1 },
-        },
-    });
+    // carusel block
+const wrapper = document.querySelector('.carousel-wrapper');
+const prevBtn = document.querySelector('.carousel-btn.prev');
+const nextBtn = document.querySelector('.carousel-btn.next');
+
+let direction = 1;
+
+nextBtn.addEventListener('click', () => {
+  const itemWidth = wrapper.querySelector('.carousel-item-link').offsetWidth + 20;
+  wrapper.scrollBy({ left: itemWidth, behavior: 'smooth' });
+});
+
+prevBtn.addEventListener('click', () => {
+  const itemWidth = wrapper.querySelector('.carousel-item-link').offsetWidth + 20;
+  wrapper.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+});
+
+let autoplayInterval = setInterval(autoScroll, 2000);
+
+function autoScroll() {
+  const itemWidth = wrapper.querySelector('.carousel-item-link').offsetWidth + 20;
+
+  if (wrapper.scrollLeft + wrapper.offsetWidth >= wrapper.scrollWidth - 5) {
+    direction = -1;
+  } else if (wrapper.scrollLeft <= 0) {
+    direction = 1;
+  }
+
+  wrapper.scrollBy({ left: itemWidth * direction, behavior: 'smooth' });
+}
+
+wrapper.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+wrapper.addEventListener('mouseleave', () => {
+  autoplayInterval = setInterval(autoScroll, 3000);
+});
