@@ -47,26 +47,26 @@ let currentPage = 'home';
     });
 
     // ==================== Form Submission ====================
-    const form = document.querySelector('form');
-    if (form) {
-        form.addEventListener('submit', function(e){
-            e.preventDefault();
-            const successMsg = document.createElement('div');
-            successMsg.style.cssText = `
-                position: fixed;
-                top:50%; left:50%;
-                transform: translate(-50%, -50%);
-                background: rgba(46, 204, 113,0.9);
-                color:white; padding:20px 40px;
-                border-radius:10px; backdrop-filter: blur(20px);
-                z-index:10000; animation: fadeIn 0.3s ease;
-            `;
-            successMsg.textContent = 'Message sent successfully! We\'ll get back to you soon.';
-            document.body.appendChild(successMsg);
-            setTimeout(()=>successMsg.remove(),3000);
-            this.reset();
-        });
-    }
+    // const form = document.querySelector('form');
+    // if (form) {
+    //     form.addEventListener('submit', function(e){
+    //         e.preventDefault();
+    //         const successMsg = document.createElement('div');
+    //         successMsg.style.cssText = `
+    //             position: fixed;
+    //             top:50%; left:50%;
+    //             transform: translate(-50%, -50%);
+    //             background: rgba(46, 204, 113,0.9);
+    //             color:white; padding:20px 40px;
+    //             border-radius:10px; backdrop-filter: blur(20px);
+    //             z-index:10000; animation: fadeIn 0.3s ease;
+    //         `;
+    //         successMsg.textContent = 'Message sent successfully! We\'ll get back to you soon.';
+    //         document.body.appendChild(successMsg);
+    //         setTimeout(()=>successMsg.remove(),3000);
+    //         this.reset();
+    //     });
+    // }
             // Add ripple animation keyframes
     const style = document.createElement('style');
         style.textContent = `
@@ -86,45 +86,78 @@ let currentPage = 'home';
         to {opacity:1; transform: translate(-50%, -50%) scale(1);}
     }`;
     document.head.appendChild(fadeStyle);
+    
 // ==================== FAQ ====================
-    document.addEventListener('DOMContentLoaded', () => {
-        const faqQuestions = document.querySelectorAll('.faq-section .faq-question');
-        faqQuestions.forEach(q => {
-            q.addEventListener('click', () => {
-                const answer = q.nextElementSibling;
-                q.classList.toggle('active');
-                if (q.classList.contains('active')){
-                    answer.style.maxHeight = answer.scrollHeight + "px";
-                    answer.style.padding = "15px 20px";
-                } else {
-                    answer.style.maxHeight = 0;
-                    answer.style.padding = "0 20px";
+
+document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-section .faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        const icon = question.querySelector('.icon');
+
+        question.addEventListener('click', () => {
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    const otherAnswer = otherItem.querySelector('.faq-answer');
+                    const otherQuestion = otherItem.querySelector('.faq-question');
+                    const otherIcon = otherQuestion.querySelector('.icon');
+
+                    otherAnswer.classList.remove('show');
+                    otherAnswer.style.maxHeight = 0;
+                    otherQuestion.classList.remove('active');
+                    if (otherIcon) otherIcon.classList.remove('rotate');
                 }
-                const arrow = q.querySelector('.icon');
-                if (arrow) arrow.classList.toggle('rotate');
             });
+
+            const isActive = question.classList.contains('active');
+            if (!isActive) {
+                question.classList.add('active');
+                answer.classList.add('show');
+                answer.style.maxHeight = answer.scrollHeight + "px";
+                if (icon) icon.classList.add('rotate');
+            } else {
+                question.classList.remove('active');
+                answer.classList.remove('show');
+                answer.style.maxHeight = 0;
+                if (icon) icon.classList.remove('rotate');
+            }
         });
     });
+});
 
-    var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 3,
-        spaceBetween: 20,
-        loop: true,
-        autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-        },
-        pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-        },
-        navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-        },
-        breakpoints: {
-        1024: { slidesPerView: 3 },
-        768: { slidesPerView: 2 },
-        480: { slidesPerView: 1 },
-        },
-    });
+    // carusel block
+const wrapper = document.querySelector('.carousel-wrapper');
+const prevBtn = document.querySelector('.carousel-btn.prev');
+const nextBtn = document.querySelector('.carousel-btn.next');
+
+let direction = 1;
+
+nextBtn.addEventListener('click', () => {
+  const itemWidth = wrapper.querySelector('.carousel-item-link').offsetWidth + 20;
+  wrapper.scrollBy({ left: itemWidth, behavior: 'smooth' });
+});
+
+prevBtn.addEventListener('click', () => {
+  const itemWidth = wrapper.querySelector('.carousel-item-link').offsetWidth + 20;
+  wrapper.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+});
+
+let autoplayInterval = setInterval(autoScroll, 2000);
+
+function autoScroll() {
+  const itemWidth = wrapper.querySelector('.carousel-item-link').offsetWidth + 20;
+
+  if (wrapper.scrollLeft + wrapper.offsetWidth >= wrapper.scrollWidth - 5) {
+    direction = -1;
+  } else if (wrapper.scrollLeft <= 0) {
+    direction = 1;
+  }
+
+  wrapper.scrollBy({ left: itemWidth * direction, behavior: 'smooth' });
+}
+
+wrapper.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+wrapper.addEventListener('mouseleave', () => {
+  autoplayInterval = setInterval(autoScroll, 3000);
+});
