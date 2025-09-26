@@ -47,26 +47,26 @@ let currentPage = 'home';
     });
 
     // ==================== Form Submission ====================
-    const form = document.querySelector('form');
-    if (form) {
-        form.addEventListener('submit', function(e){
-            e.preventDefault();
-            const successMsg = document.createElement('div');
-            successMsg.style.cssText = `
-                position: fixed;
-                top:50%; left:50%;
-                transform: translate(-50%, -50%);
-                background: rgba(46, 204, 113,0.9);
-                color:white; padding:20px 40px;
-                border-radius:10px; backdrop-filter: blur(20px);
-                z-index:10000; animation: fadeIn 0.3s ease;
-            `;
-            successMsg.textContent = 'Message sent successfully! We\'ll get back to you soon.';
-            document.body.appendChild(successMsg);
-            setTimeout(()=>successMsg.remove(),3000);
-            this.reset();
-        });
-    }
+    // const form = document.querySelector('form');
+    // if (form) {
+    //     form.addEventListener('submit', function(e){
+    //         e.preventDefault();
+    //         const successMsg = document.createElement('div');
+    //         successMsg.style.cssText = `
+    //             position: fixed;
+    //             top:50%; left:50%;
+    //             transform: translate(-50%, -50%);
+    //             background: rgba(46, 204, 113,0.9);
+    //             color:white; padding:20px 40px;
+    //             border-radius:10px; backdrop-filter: blur(20px);
+    //             z-index:10000; animation: fadeIn 0.3s ease;
+    //         `;
+    //         successMsg.textContent = 'Message sent successfully! We\'ll get back to you soon.';
+    //         document.body.appendChild(successMsg);
+    //         setTimeout(()=>successMsg.remove(),3000);
+    //         this.reset();
+    //     });
+    // }
             // Add ripple animation keyframes
     const style = document.createElement('style');
         style.textContent = `
