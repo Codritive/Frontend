@@ -13,7 +13,7 @@
     <section class="hero glass">
         <h1 class="main-title">{{ course.title }}</h1>
         <div class="hero-image">
-            <p>{{ course.full_description }}</p>
+            <p>{{ course.full_description|linebreaksbr }}</p>
             {% if course.image %}
                 <img src="{{ course.image.url }}" style="width: 400px; height: 300px;">
             {% endif %}
@@ -23,33 +23,32 @@
             <div class="cta-element">Շաբաթը {{ course.weekly_lessons }} օր</div>
             <div class="cta-element">{{ course.lesson_duration_minutes }} րոպե</div>
             <div class="cta-element">{{ course.price }} դրամ</div>
-            <button class="cta-button">Enroll Now</button>
+            <button class="cta-button rbj">Enroll Now</button>
         </div>
     </section>
-
     <!-- For Whom Section -->
     <section class="hero glass">
         <h1 class="main-title">For whom is this</h1>
         <div class="hero-text-wrapper">
-            <p>{{ course.for_whom }}</p>
+            <p>{{ course.for_whom|linebreaksbr }}</p>
         </div>
-        <button class="cta-button">Enroll Now</button>
+        <button class="cta-button button-bottom rbj">Enroll Now</button>
     </section>
 
     <!-- Why Python Section -->
     <section class="hero glass">
         <h1 class="main-title">Why Python</h1>
-        <p>{{ course.why_this_course }}</p>
-        <button class="cta-button">Enroll Now</button>
+        <p>{{ course.why_this_course|linebreaksbr }}</p>
+        <button class="cta-button button-bottom rbj">Enroll Now</button>
     </section>
 
     <!-- Curriculum Section -->
     <section class="hero glass">
         <h1>Curriculum</h1>
         <ul>
-            <li>{{ course.curriculum }}</li>
+            <li>{{ course.curriculum|linebreaksbr }}</li>
         </ul>
-        <button class="cta-button">Enroll Now</button>
+        <button class="cta-button button-bottom rbj">Enroll Now</button>
     </section>
 
     <!-- Tutor Section -->
@@ -117,4 +116,13 @@
 
 </div>
     <script src="{% static 'js/templatemo-glossy-touch.js' %}"></script>
-{% endblock %}
+    <style>
+    .button-bottom {
+    bottom: 40px;
+    }
+    .rbj {
+    position: absolute;
+    right: 40px;
+    }
+    </style>
+    {% endblock %}
