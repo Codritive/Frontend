@@ -1057,13 +1057,11 @@ ul li { color: white; margin: 14px 0; font-size: 14px; }
 }
 
 .carousel-item-link:hover {
-  transform: translateY(-12px) scale(1.07);
-  opacity: 1;
   box-shadow: 0 15px 35px rgba(0,0,0,0.25), 0 0 25px rgba(255,255,255,0.15);
 }
 
 .carousel-item-link:hover img {
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
 .carousel-btn {
@@ -1108,3 +1106,9 @@ ul li { color: white; margin: 14px 0; font-size: 14px; }
     margin: 0;
     padding: 0;
 }
+
+
+
+
+
+

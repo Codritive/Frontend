@@ -86,25 +86,42 @@ let currentPage = 'home';
         to {opacity:1; transform: translate(-50%, -50%) scale(1);}
     }`;
     document.head.appendChild(fadeStyle);
+    
 // ==================== FAQ ====================
-  document.addEventListener('DOMContentLoaded', () => {
-    const faqQuestions = document.querySelectorAll('.faq-section .faq-question');
 
-    faqQuestions.forEach(q => {
-        q.addEventListener('click', () => {
-            const answer = q.nextElementSibling;
-            q.classList.toggle('active');
+document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-section .faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        const icon = question.querySelector('.icon');
 
-            if (q.classList.contains('active')){
+        question.addEventListener('click', () => {
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    const otherAnswer = otherItem.querySelector('.faq-answer');
+                    const otherQuestion = otherItem.querySelector('.faq-question');
+                    const otherIcon = otherQuestion.querySelector('.icon');
+
+                    otherAnswer.classList.remove('show');
+                    otherAnswer.style.maxHeight = 0;
+                    otherQuestion.classList.remove('active');
+                    if (otherIcon) otherIcon.classList.remove('rotate');
+                }
+            });
+
+            const isActive = question.classList.contains('active');
+            if (!isActive) {
+                question.classList.add('active');
                 answer.classList.add('show');
                 answer.style.maxHeight = answer.scrollHeight + "px";
+                if (icon) icon.classList.add('rotate');
             } else {
+                question.classList.remove('active');
                 answer.classList.remove('show');
                 answer.style.maxHeight = 0;
+                if (icon) icon.classList.remove('rotate');
             }
-
-            const arrow = q.querySelector('.icon');
-            if (arrow) arrow.classList.toggle('rotate');
         });
     });
 });
