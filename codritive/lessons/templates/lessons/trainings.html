@@ -23,10 +23,9 @@
             <div class="cta-element">Շաբաթը {{ course.weekly_lessons }} օր</div>
             <div class="cta-element">{{ course.lesson_duration_minutes }} րոպե</div>
             <div class="cta-element">{{ course.price }} դրամ</div>
-            <button class="cta-button">Enroll Now</button>
+            <button class="cta-button rbj">Enroll Now</button>
         </div>
     </section>
-
     <!-- For Whom Section -->
     <section class="hero glass">
         <h1 class="main-title">For whom is this</h1>
@@ -117,4 +116,13 @@
 
 </div>
     <script src="{% static 'js/templatemo-glossy-touch.js' %}"></script>
-{% endblock %}
+    <style>
+    .button-container {
+    display: flex;
+    justify-content: flex-end;}
+    .rbj {
+    position: absolute;
+    right: 40px;
+    }
+    </style>
+    {% endblock %}
