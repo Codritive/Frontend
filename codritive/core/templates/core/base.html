@@ -8,6 +8,7 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="{% static 'css/templatemo-glossy-touch.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Page-specific CSS -->
     {% block extra_css %}{% endblock %}
@@ -35,11 +36,26 @@
                         <a href="{% url 'core:home' %}">Home</a>
                     {% endif %}
                 </div>
+                <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61578668529901" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://www.linkedin.com/company/108302999/admin/dashboard/" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://www.instagram.com/codritive/" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
                 <div class="nav-links">
                     <a href="{% url 'core:about' %}">About</a>
                     <a href="{% url 'core:service' %}">Services</a>
                     <a href="{% url 'core:training' %}">Courses</a>
-                    <a href="{% url 'core:contact_us' %}">Contact</a>
+                    <a href="{% url 'core:contact' %}">Contact</a>
                 </div>
             </nav>
         </div>
