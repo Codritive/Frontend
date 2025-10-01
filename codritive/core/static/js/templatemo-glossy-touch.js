@@ -67,7 +67,6 @@ let currentPage = 'home';
             this.reset();
         });
     }
-            // Add ripple animation keyframes
     const style = document.createElement('style');
         style.textContent = `
             @keyframes ripple {
@@ -78,7 +77,6 @@ let currentPage = 'home';
             }
         `;
     document.head.appendChild(style);
-            // Add fade in animation
     const fadeStyle = document.createElement('style');
     fadeStyle.textContent = `
     @keyframes fadeIn {
@@ -128,36 +126,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // carusel block
 const wrapper = document.querySelector('.carousel-wrapper');
+const items = wrapper.querySelectorAll('.carousel-item-link');
 const prevBtn = document.querySelector('.carousel-btn.prev');
 const nextBtn = document.querySelector('.carousel-btn.next');
 
-let direction = 1;
+const itemWidth = items[0].offsetWidth + 20;
 
-nextBtn.addEventListener('click', () => {
-  const itemWidth = wrapper.querySelector('.carousel-item-link').offsetWidth + 20;
-  wrapper.scrollBy({ left: itemWidth, behavior: 'smooth' });
-});
-
-prevBtn.addEventListener('click', () => {
-  const itemWidth = wrapper.querySelector('.carousel-item-link').offsetWidth + 20;
-  wrapper.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+items.forEach(item => {
+  const clone = item.cloneNode(true);
+  wrapper.appendChild(clone);
 });
 
 let autoplayInterval = setInterval(autoScroll, 2000);
 
 function autoScroll() {
-  const itemWidth = wrapper.querySelector('.carousel-item-link').offsetWidth + 20;
-
-  if (wrapper.scrollLeft + wrapper.offsetWidth >= wrapper.scrollWidth - 5) {
-    direction = -1;
-  } else if (wrapper.scrollLeft <= 0) {
-    direction = 1;
-  }
-
-  wrapper.scrollBy({ left: itemWidth * direction, behavior: 'smooth' });
+  scrollNext();
 }
+
+function scrollNext() {
+  if (wrapper.scrollLeft >= wrapper.scrollWidth / 2) {
+    wrapper.scrollLeft = 0;
+  }
+  wrapper.scrollBy({ left: itemWidth, behavior: 'smooth' });
+}
+
+function scrollPrev() {
+  if (wrapper.scrollLeft <= 0) {
+    wrapper.scrollLeft = wrapper.scrollWidth / 2;
+  }
+  wrapper.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+}
+
+nextBtn.addEventListener('click', scrollNext);
+prevBtn.addEventListener('click', scrollPrev);
 
 wrapper.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
 wrapper.addEventListener('mouseleave', () => {
-  autoplayInterval = setInterval(autoScroll, 3000);
+  autoplayInterval = setInterval(autoScroll, 2000);
 });
