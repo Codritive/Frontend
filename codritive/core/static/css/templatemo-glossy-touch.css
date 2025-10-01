@@ -336,14 +336,13 @@ nav {
 .cta-element {
     display: inline-block;
     padding: 15px 40px;
-    background: rgba(25, 214, 0, 0.3);
+    background: rgba(255, 255, 255, 0.1);
     color: white;
     text-decoration: none;
     border-radius: 50px;
     font-weight: 600;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     transition: all 0.3s ease;
-    border: 2px solid rgba(25, 214, 0, 0.3);
     cursor: pointer;
 }
 .cta-button {
@@ -1187,3 +1186,46 @@ li {
   margin: 0;
   padding: 0;
 }
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.cta-button {
+    background-color: #FD7400;
+    
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.cta-button:hover {
+    background-color: #7ED956;
+}
+
+
+
+
+
