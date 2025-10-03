@@ -47,6 +47,26 @@ let currentPage = 'home';
     });
 
     // ==================== Form Submission ====================
+    const form = document.querySelector('form');
+    if (form) {
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+            const successMsg = document.createElement('div');
+            successMsg.style.cssText = `
+                position: fixed;
+                top:50%; left:50%;
+                transform: translate(-50%, -50%);
+                background: rgba(46, 204, 113,0.9);
+                color:white; padding:20px 40px;
+                border-radius:10px; backdrop-filter: blur(20px);
+                z-index:10000; animation: fadeIn 0.3s ease;
+            `;
+            successMsg.textContent = 'Message sent successfully! We\'ll get back to you soon.';
+            document.body.appendChild(successMsg);
+            setTimeout(()=>successMsg.remove(),3000);
+            this.reset();
+        });
+    }
     // const form = document.querySelector('form');
     // if (form) {
     //     form.addEventListener('submit', function(e){
@@ -78,7 +98,6 @@ let currentPage = 'home';
             }
         `;
     document.head.appendChild(style);
-            // Add fade in animation
     const fadeStyle = document.createElement('style');
     fadeStyle.textContent = `
     @keyframes fadeIn {
@@ -128,36 +147,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // carusel block
 const wrapper = document.querySelector('.carousel-wrapper');
+const items = wrapper.querySelectorAll('.carousel-item-link');
 const prevBtn = document.querySelector('.carousel-btn.prev');
 const nextBtn = document.querySelector('.carousel-btn.next');
 
-let direction = 1;
+const itemWidth = items[0].offsetWidth + 20;
 
-nextBtn.addEventListener('click', () => {
-  const itemWidth = wrapper.querySelector('.carousel-item-link').offsetWidth + 20;
-  wrapper.scrollBy({ left: itemWidth, behavior: 'smooth' });
-});
-
-prevBtn.addEventListener('click', () => {
-  const itemWidth = wrapper.querySelector('.carousel-item-link').offsetWidth + 20;
-  wrapper.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+items.forEach(item => {
+  const clone = item.cloneNode(true);
+  wrapper.appendChild(clone);
 });
 
 let autoplayInterval = setInterval(autoScroll, 2000);
 
 function autoScroll() {
-  const itemWidth = wrapper.querySelector('.carousel-item-link').offsetWidth + 20;
-
-  if (wrapper.scrollLeft + wrapper.offsetWidth >= wrapper.scrollWidth - 5) {
-    direction = -1;
-  } else if (wrapper.scrollLeft <= 0) {
-    direction = 1;
-  }
-
-  wrapper.scrollBy({ left: itemWidth * direction, behavior: 'smooth' });
+  scrollNext();
 }
+
+function scrollNext() {
+  if (wrapper.scrollLeft >= wrapper.scrollWidth / 2) {
+    wrapper.scrollLeft = 0;
+  }
+  wrapper.scrollBy({ left: itemWidth, behavior: 'smooth' });
+}
+
+function scrollPrev() {
+  if (wrapper.scrollLeft <= 0) {
+    wrapper.scrollLeft = wrapper.scrollWidth / 2;
+  }
+  wrapper.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+}
+
+nextBtn.addEventListener('click', scrollNext);
+prevBtn.addEventListener('click', scrollPrev);
 
 wrapper.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
 wrapper.addEventListener('mouseleave', () => {
-  autoplayInterval = setInterval(autoScroll, 3000);
+  autoplayInterval = setInterval(autoScroll, 2000);
 });
