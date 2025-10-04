@@ -281,88 +281,6 @@ nav {
     min-height: calc(100vh - 300px);
 }
 
-.hero {
-    position: relative;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    margin-bottom: 40px;
-    padding: 60px 40px;
-    align-items: flex-start;
-    padding-top: 20px;
-}
-.hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-}
-.hero-image {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-.hero-image img {
-    width: 100%;
-    max-width: 440px;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-}
-.hero-content {
-    text-align: left;
-}
-.hero h1 {
-    font-size: 2.8rem;
-    color: white;
-    margin-bottom: 20px;
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    line-height: 1.2;
-    margin-top: 20px
-}
-.hero p {
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 30px;
-    line-height: 1.6;
-}
-.cta-element {
-    display: inline-block;
-    padding: 15px 40px;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 600;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-.cta-button {
-    display: inline-block;
-    padding: 15px 40px;
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 600;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    transition: all 0.3s ease;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    cursor: pointer;
-}
-.cta-button:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
 .rect-btn {
   background-color: rgba(255, 255, 255, 0.2);
   color: white;
@@ -1209,7 +1127,36 @@ textarea.form-control {
     min-height: 120px;
     resize: vertical;
 }
-
+.cta-element {
+    display: inline-block;
+    padding: 15px 40px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+.cta-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
 .cta-button {
     background-color: #FD7400;
     
@@ -1225,44 +1172,137 @@ textarea.form-control {
     background-color: #7ED956;
 }
 
-.form-group {
-    margin-bottom: 15px;
-}
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
 
-.form-control {
+.hero {
+    position: relative;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+    padding: 60px 40px;
+    align-items: flex-start;
+    padding-top: 20px;
+}
+.hero-text {
+    position: relative; /* հանիր absolute */
+    top: auto;
+    left: auto;
+    
+    transform: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center; /* կամ center՝ ըստ ցանկության */
+}
+.hero-image {
+    align-items: center;
+    display: flex;
+}
+.hero-image img {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
+    max-width: 440px;
+    height: auto;
+    /* margin-left: 55px; */
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
-
-textarea.form-control {
-    min-height: 120px;
-    resize: vertical;
+.hero-content {
+    text-align: center;
 }
-
-.cta-button {
-    background-color: #FD7400;
-    
+.hero h1 {
+    font-size: 2.8rem;
     color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    line-height: 1.2;
+    margin-top: 20px
+}
+.hero p {
+    margin-right: 30px;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 50px;
+    line-height: 1.6;
 }
 
-.cta-button:hover {
-    background-color: #7ED956;
+
+
+
+
+
+@media (max-width: 768px) {
+    /* Վերնագիր */
+    .main-title {
+        font-size: 24px;
+        text-align: center;
+        padding: 0 10px;
+        margin-bottom: 15px;
+    }
+
+    /* Նկարի և տեքստի հատված */
+    .hero-image {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        gap: 15px;
+    }
+.hero p {
+    /* margin-right: 99px; */
+    color: rgba(255, 255, 255, 0.9);
+    /* margin-bottom: 50px; */
+        text-align: center;
+        width: 100%;
+    box-sizing: border-box;
+
+    line-height: 1.5;
 }
+    .course-image {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+       /* .hero-image p {
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 10px;
+    max-width: 100%;
+    box-sizing: border-box;
+  } */
 
 
+    /* CTA տարրերի layout */
+    .cta-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 15px 10px;
+    }
 
+    .cta-element {
+        width: 45%;
+        text-align: center;
+        padding: 12px 10px;
+        font-size: 14px;
+        border-radius: 8px;
+        box-sizing: border-box;
+    }
 
+    .cta-button {
+        width: 60%;
+        text-align: center;
+        padding: 14px 10px;
+        font-size: 16px;
+        border-radius: 8px;
+        margin-top: 110px;
+        margin-right: 40px;
+    }
+}
