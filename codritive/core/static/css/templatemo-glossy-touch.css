@@ -1132,6 +1132,8 @@ textarea.form-control {
     padding: 15px 40px;
     background: rgba(255, 255, 255, 0.1);
     color: white;
+     pointer-events: none;
+  
     text-decoration: none;
     border-radius: 50px;
     font-weight: 600;
@@ -1145,6 +1147,7 @@ textarea.form-control {
     background: rgba(255, 255, 255, 0.2);
     color: white;
     text-decoration: none;
+    
     border-radius: 50px;
     font-weight: 600;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -1249,7 +1252,7 @@ textarea.form-control {
         align-items: center;
         text-align: center;
         width: 100%;
-        gap: 15px;
+        gap: 25px;
     }
 .hero p {
     /* margin-right: 99px; */
@@ -1257,6 +1260,7 @@ textarea.form-control {
     /* margin-bottom: 50px; */
         text-align: center;
         width: 100%;
+        margin-left: 20px;
     box-sizing: border-box;
 
     line-height: 1.5;
@@ -1278,15 +1282,18 @@ textarea.form-control {
     .cta-element {
         width: 45%;
         text-align: center;
+             pointer-events: none;
         padding: 12px 10px;
         font-size: 14px;
         border-radius: 8px;
         box-sizing: border-box;
+        
     }
 
     .cta-button {
         width: 60%;
         text-align: center;
+        
         padding: 14px 10px;
         font-size: 16px;
         border-radius: 8px;
