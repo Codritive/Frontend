@@ -1188,7 +1188,7 @@ textarea.form-control {
     padding-top: 20px;
 }
 .hero-text {
-    position: relative; /* հանիր absolute */
+    position: relative;
     top: auto;
     left: auto;
     
@@ -1196,7 +1196,7 @@ textarea.form-control {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    text-align: center; /* կամ center՝ ըստ ցանկության */
+    text-align: center;
 }
 .hero-image {
     align-items: center;
@@ -1243,7 +1243,6 @@ textarea.form-control {
         margin-bottom: 15px;
     }
 
-    /* Նկարի և տեքստի հատված */
     .hero-image {
         display: flex;
         flex-direction: column;
@@ -1268,17 +1267,6 @@ textarea.form-control {
         max-width: 100%;
         border-radius: 10px;
     }
-
-       /* .hero-image p {
-    text-align: center;
-    margin: 0 auto;
-    padding: 0 10px;
-    max-width: 100%;
-    box-sizing: border-box;
-  } */
-
-
-    /* CTA տարրերի layout */
     .cta-info {
         display: flex;
         flex-wrap: wrap;
