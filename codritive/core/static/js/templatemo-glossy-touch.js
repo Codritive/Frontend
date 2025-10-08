@@ -106,6 +106,73 @@ let currentPage = 'home';
     }`;
     document.head.appendChild(fadeStyle);
     
+
+
+
+
+
+
+// 0-IC barcr tveri bloky
+
+// ==================== Stats Counter Animation ====================
+document.addEventListener('DOMContentLoaded', () => {
+    const counters = document.querySelectorAll('.stat-number');
+    if (!counters || counters.length === 0) return;
+
+    counters.forEach(counter => {
+        const originalText = counter.textContent.trim();
+
+        // Prefer data- attribute
+        const ds = counter.getAttribute('data-target');
+        const target = ds ? Number(ds) : (function() {
+            const m = originalText.match(/(\d+)/);
+            return m ? Number(m[1]) : NaN;
+        })();
+
+        if (isNaN(target)) {
+            counter.textContent = originalText; 
+        }
+
+        counter.textContent = '0';
+        const duration = 1400;
+
+        const animate = (startTime) => (timestamp) => {
+            if (!startTime.value) startTime.value = timestamp;
+            const elapsed = timestamp - startTime.value;
+            const progress = Math.min(elapsed / duration, 1);
+            const current = Math.floor(progress * target);
+            counter.textContent = current;
+
+            if (progress < 1) {
+                requestAnimationFrame(animate(startTime));
+            } else {
+                if (/\+/.test(originalText)) counter.textContent = target + '+';
+                else if (/over/i.test(originalText)) counter.textContent = 'Over ' + target;
+                else if (/\d+\/\d+/.test(originalText)) {
+                    counter.textContent = originalText.replace(/\d+/, String(target));
+                } else counter.textContent = String(target);
+            }
+        };
+
+        if ('IntersectionObserver' in window) {
+            const io = new IntersectionObserver(entries => {
+                if (entries[0].isIntersecting) {
+                    const startRef = { value: null };
+                    requestAnimationFrame(animate(startRef));
+                    io.disconnect();
+                }
+            }, { threshold: 0.3 });
+            io.observe(counter);
+        } else {
+            const startRef = { value: null };
+            requestAnimationFrame(animate(startRef));
+        }
+    });
+});
+
+
+
+
 // ==================== FAQ ====================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -184,4 +251,10 @@ prevBtn.addEventListener('click', scrollPrev);
 wrapper.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
 wrapper.addEventListener('mouseleave', () => {
   autoplayInterval = setInterval(autoScroll, 2000);
+
+
+  
 });
+
+
+
