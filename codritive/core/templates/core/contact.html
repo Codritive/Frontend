@@ -10,38 +10,55 @@
             <section class="contact-grid">
                 <div class="contact-form glass">
                     <h2>Have Questions? Get In Touch</h2>
-                    <form method="post">
+                    <form method="post" novalidate>
                         {% csrf_token %}
 
-                        <div class="form-group">
+                        {% if form.non_field_errors %}
+                            <div class="error-message non-field-errors">
+                                {{ form.non_field_errors|striptags }}
+                            </div>
+                        {% endif %}
+
+                        <div class="form-group{% if form.full_name.errors %} has-error{% endif %}">
                             {{ form.full_name.label_tag }}
                             {{ form.full_name }}
-                            {{ form.full_name.errors }}
+                            {% if form.full_name.errors %}
+                                <div class="error-message">{{ form.full_name.errors|striptags }}</div>
+                            {% endif %}
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group{% if form.email.errors %} has-error{% endif %}">
                             {{ form.email.label_tag }}
                             {{ form.email }}
-                            {{ form.email.errors }}
+                            {% if form.email.errors %}
+                                <div class="error-message">{{ form.email.errors|striptags }}</div>
+                            {% endif %}
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group{% if form.phone_number.errors %} has-error{% endif %}">
                             {{ form.phone_number.label_tag }}
                             {{ form.phone_number }}
-                            {{ form.phone_number.errors }}
+                            {% if form.phone_number.errors %}
+                                <div class="error-message">{{ form.phone_number.errors|striptags }}</div>
+                            {% endif %}
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group{% if form.subject.errors %} has-error{% endif %}">
                             {{ form.subject.label_tag }}
                             {{ form.subject }}
-                            {{ form.subject.errors }}
+                            {% if form.subject.errors %}
+                                <div class="error-message">{{ form.subject.errors|striptags }}</div>
+                            {% endif %}
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group{% if form.message.errors %} has-error{% endif %}">
                             {{ form.message.label_tag }}
                             {{ form.message }}
-                            {{ form.message.errors }}
+                            {% if form.message.errors %}
+                                <div class="error-message">{{ form.message.errors|striptags }}</div>
+                            {% endif %}
                         </div>
+
                         <button type="submit" class="cta-button">Send Message</button>
 
                         {% if success %}
