@@ -95,11 +95,15 @@
       {% for course in courses %}
       <a href="{% url 'lessons:course_detail' course.pk %}" class="carousel-item-link">
         <div class="service-card glass">
-          <h3>{{ course.title }}</h3>
-          <p>{{ course.category }}</p>
+          
           {% if course.image %}
           <img src="{{ course.image.url }}" alt="{{ course.title }}" style="height: 160px;">
           {% endif %}
+                    <p>{{ course.category }}</p>
+
+<h1>{{ course.title }}</h1>
+                              <p>{{ course.category }}</p> 
+
           <li>{{ course.short_description }}</li>
         </div>
       </a>

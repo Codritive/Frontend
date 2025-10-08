@@ -26,38 +26,78 @@
                 <a href="{% url 'core:training' %}" class="cta-button">Enroll Now</a>
             </section>
 
-            <!-- Carousel Section -->
-            <section class="hero glass">
-                <div id="heroCarousel" class="carousel">
-                    {% for i in carousel_range %}
-                    <div class="carousel-slide {% if forloop.first %}active{% endif %}">
-                        <img src="{% static 'images/templatemo-futuristic-girl' %}{{ i }}.jpg" alt="Slide {{ i }}">
-                        <div class="hero-content">
-                            <h1>
-                                {% if i == 1 %}Welcome to the Future
-                                {% elif i == 2 %}Learn with Experts
-                                {% else %}Shape Your Career
-                                {% endif %}
-                            </h1>
-                            <p>
-                                {% if i == 1 %}
-                                    Professional IT Training Courses taught by real industry experts.
-                                {% elif i == 2 %}
-                                    Join our hands-on workshops and events for all skill levels.
-                                {% else %}
-                                    Explore courses in Web Development, Data Science, and more.
-                                {% endif %}
-                            </p>
-                        </div>
-                    </div>
-                    {% endfor %}
-                    <button class="carousel-control prev" onclick="moveSlide(-1)">&#10094;</button>
-                    <button class="carousel-control next" onclick="moveSlide(1)">&#10095;</button>
-                </div>
-            </section>
+<!-- taza carter   -->
+<section class="hero glass">
+  <div class="custom-carousel">
+    <div class="carousel-wrapper">
+      
+      <div class="carousel-card">
+        <img src="/media/hero.png" alt="Card 1">
+         <div class="card-content">
+  <div class="card-subtitle-wrapper">
+    <p class="card-subtitle">begginers</p>
+    <p class="card-subtitle">4 months</p>
+  </div>
+          <h1>UX/UI Design A-Z</h1>
+          <h4 class="card-author">Taron Sayadyan</h4>
+          <p>Lorem ipsum dolor sit amet consectetur. Amet feugiat mauris morbi dignissim laoreet convallis commodo.</p>
+          <div class="price-container">
+  <span class="price">59,000AMD</span>
+  <span class="per-month">/ per month</span>
+</div>
+        </div>
+      </div>
 
+      <div class="carousel-card">
+        <img src="/media/hero.png" alt="Card 2">
+        <div class="card-content">
+  <div class="card-subtitle-wrapper">
+    <p class="card-subtitle">Category</p>
+    <p class="card-subtitle">Subtitle 2</p>
+  </div>          <h1>UX/UI Design A-Z
+</h1>
+          <h4 class="card-author">Anna Karapetyan</h4>
+          <p>Lorem ipsum dolor sit amet consectetur. Amet feugiat mauris morbi dignissim laoreet convallis commodo.
+
+</p>
+<div class="price-container">
+  <span class="price">59,000AMD</span>
+  <span class="per-month">/ per month</span>
+</div>
+        </div>
+      </div>
+      <div class="carousel-card">
+        <img src="/media/hero.png" alt="Card 3">
+        <div class="card-content">
+  <div class="card-subtitle-wrapper">
+    <p class="card-subtitle">Category</p>
+    <p class="card-subtitle">Subtitle 2</p>
+  </div>          <h1>UX/UI Design A-Z
+</h1>
+          <h4 class="card-author">John Doe</h4>
+          <p>Lorem ipsum dolor sit amet consectetur. Amet feugiat mauris morbi dignissim laoreet convallis commodo.
+
+</p>
+<div class="price-container">
+  <span class="price">59,000AMD</span>
+  <span class="per-month">/ per month</span>
+</div>
+
+        </div>
+        
+      </div>
+
+    </div>
+  </div>
+  <div class="button-container">
+<a href="/lessons/trainings/">
+    <button class="more-btn">More</button>
+</a>
+</div>
+
+</section>
             <!-- Services Grid -->
-            <section class="services-grid">
+            <!-- <section class="services-grid">
                 <div class="service-card glass">
                     <h3>Events</h3>
                     <p>Learn more about our upcoming events:</p>
@@ -78,7 +118,30 @@
                     </ul>
                     <a href="#" class="cta-button">Learn More</a>
                 </div>
-            </section>
+            </section> -->
+<section class="hero stats-hero glass">
+  <h1>Why Us</h1>
+
+  <div class="stats">
+    <div class="stat-card glass">
+      <div class="stat-number" data-target="10">0+</div>
+      <div class="stat-label">Projects Completed</div>
+    </div>
+    <div class="stat-card glass">
+      <div class="stat-number" data-target="24">24/7</div>
+      <div class="stat-label">Support Available</div>
+    </div>
+    <div class="stat-card glass">
+      <div class="stat-number" data-target="20">0+</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+
+  </div>
+
+  
+</section>
+
+
 
         </div>
     </div>

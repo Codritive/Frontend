@@ -25,12 +25,13 @@
                 {% for course in courses %}
                 <a href="{% url 'lessons:course_detail' course.pk %}" class="service-card-link">
                     <div class="service-card glass">
+                                                    <img src="{{ course.image.url }}" alt="{{ course.title }}" class="course-image" style="height: 160px;">
+
                         <h3>{{ course.title }}</h3>
                         <p>{{ course.category }}</p>
 
                         {% if course.image %}
                         <div class="course-image-wrapper">
-                            <img src="{{ course.image.url }}" alt="{{ course.title }}" class="course-image" style="height: 160px;">
                         </div>
                         {% endif %}
 
