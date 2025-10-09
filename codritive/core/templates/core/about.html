@@ -5,65 +5,108 @@
 
 {% block content %}
 
-    <link rel="stylesheet" href="{% static 'css/templatemo-glossy-touch.css' %}">
-    <script src="{% static 'js/templatemo-glossy-touch.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
 
 <div class="container">
-    <div class="content-wrapper">
+  <div class="content-wrapper">
 
-        <!-- About Content -->
-        <!-- <section class="about-content">
-            <div class="about-text glass">
-                <h2>{{ about.title }}</h2>
-                <p>{{ about.description }}</p>
-            </div>
-
-            <div class="stats">
-                <div class="stat-card glass">
-                    <div class="stat-number">10+</div>
-                    <div class="stat-label">Projects Completed</div>
-                </div>
-                <div class="stat-card glass">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Happy Clients</div>
-                </div>
-                <div class="stat-card glass">
-                    <div class="stat-number">Over 1</div>
-                    <div class="stat-label">Years Experience</div>
-                </div>
-                <div class="stat-card glass">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">Support Available</div>
-                </div>
-            </div>
-        </section> -->
-
-        <section class="team-section">
-            <h2>Meet Our Team</h2>
-            <div class="team-grid">
-                {% for member in team_members %}
-                <div class="team-member glass">
-                    {% if member.image %}
-                    <a href="{% url 'core:tutor' member.pk %}">
-                        <img src="{{ member.image.url }}" class="team-avatar-img" style="height:160px">
-                    </a>
-                    {% else %}
-                        <div class="team-avatar">👨‍💻</div>
-                    {% endif %}
-
-                    <h3>{{ member.name }}</h3>
-                    <p class="role">{{ member.position }}</p>
-                    <p class="bio">{{ member.bio }}</p>
-
-                    <div class="team-social">
-                        <a href="{% url 'core:tutor' member.pk %}" title="LinkedIn">💼</a>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </section>
-
+    <div class="about-header">
+        <h1>About Us</h1>
+        <p>Discover the driving force behind our success and the principles that guide our journey.</p>
     </div>
+
+    <section class="top-info-section">
+      <div class="info-grid-wrapper">
+
+        <div class="info-grid">
+          <div class="info-card glass">
+            <h3 class="info-title">Who We Are</h3>
+            <p class="info-desc">
+              We’re a team of IT experts turning ideas into powerful digital solutions that help businesses grow.
+            </p>
+          </div>
+
+          <div class="info-card glass">
+            <h3 class="info-title">Our Mission</h3>
+            <p class="info-desc">
+              Delivering reliable, scalable, and cost-effective IT solutions that drive real results.
+            </p>
+          </div>
+
+          <div class="info-card glass">
+            <h3 class="info-title">Our Vision</h3>
+            <p class="info-desc">
+              To lead global innovation and empower businesses through smart technology.
+            </p>
+          </div>
+
+          <div class="info-card glass">
+            <h3 class="info-title">Our Values</h3>
+            <p class="info-desc">
+              Integrity, innovation, and collaboration — we grow by helping our clients succeed.
+            </p>
+          </div>
+        </div>
+
+        <div class="center-image">
+          <img src="/media/nkar.png" alt="Center Image">
+        </div>
+
+      </div>
+    </section>
+
+
+
+  <section class="hero stats-hero">
+  
+  <h1 class="hello-title">Why Us</h1>
+
+  <div class="stats">
+    <div class="stat-card glass">
+      <div class="stat-number" data-target="10">0+</div>
+      <div class="stat-label">Projects Completed</div>
+    </div>
+    <div class="stat-card glass">
+      <div class="stat-number" data-target="24">24/7</div>
+      <div class="stat-label">Support Available</div>
+    </div>
+    <div class="stat-card glass">
+      <div class="stat-number" data-target="20">0+</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+  </div>
+
+</section>
+
+
+
+    <!-- ====== TEAM SECTION ====== -->
+    <section class="team-section">
+      <h2>Meet Our Team</h2>
+      <div class="team-grid">
+        {% for member in team_members %}
+        <div class="team-member glass">
+          {% if member.image %}
+          <a href="{% url 'core:tutor' member.pk %}">
+            <img src="{{ member.image.url }}" class="team-avatar-img" style="height:160px">
+          </a>
+          {% else %}
+          <div class="team-avatar">👨‍💻</div>
+          {% endif %}
+
+          <h3>{{ member.name }}</h3>
+          <p class="role">{{ member.position }}</p>
+          <p class="bio">{{ member.bio }}</p>
+
+          <div class="team-social">
+            <a href="{% url 'core:tutor' member.pk %}" title="LinkedIn">💼</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+  </div>
 </div>
 
 {% endblock %}

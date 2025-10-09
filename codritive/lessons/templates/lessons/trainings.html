@@ -11,7 +11,14 @@
 
     <!-- Hero Section -->
     <section class="hero glass">
+        
         <h1 class="main-title">{{ course.title }}</h1>
+         <div class="cta-info">
+            <div class="cta-element">{{ course.lesson_duration_month }} ամիս</div>
+            <div class="cta-element">Շաբաթը {{ course.weekly_lessons }} օր</div>
+            <div class="cta-element">{{ course.lesson_duration_minutes }} րոպե</div>
+            <div class="cta-element">{{ course.price }} դրամ</div>
+        </div>
         <div class="hero-image">
             <p>{{ course.full_description|linebreaksbr }}</p>
             {% if course.image %}
@@ -19,10 +26,7 @@
             {% endif %}
         </div>
         <div class="cta-info">
-            <div class="cta-element">{{ course.lesson_duration_month }} ամիս</div>
-            <div class="cta-element">Շաբաթը {{ course.weekly_lessons }} օր</div>
-            <div class="cta-element">{{ course.lesson_duration_minutes }} րոպե</div>
-            <div class="cta-element">{{ course.price }} դրամ</div>
+           
             <button class="cta-button rbj">Enroll Now</button>
         </div>
     </section>
@@ -44,7 +48,7 @@
         <ul>
             <li>{{ course.curriculum|linebreaksbr }}</li>
         </ul>
-        <button class="cta-button button-bottom rbj">Enroll Now</button>
+        <button class="cta-button button-bottom rbjj">Enroll Now</button>
     </section>
 
     <!-- Tutor Section -->
