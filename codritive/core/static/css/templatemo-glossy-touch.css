@@ -369,7 +369,7 @@ ul li {
 .stats-text-container {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: -10px;
   padding: 0 20px;
 }
 
@@ -392,11 +392,28 @@ ul li {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
 }
 
+.stats-hero {
+  margin-top: -200px; /* 👈 բարձրացնում ենք ամբողջ Why Us հատվածը */
+}
+
+
+.hello-title {
+  font-size: 50px;
+  color: #fff;
+  margin-bottom: 30px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  position: relative;
+  left: -30px; /* 👈 տեղափոխում է ձախ */
+}
+
+
+/* քարտերի wrapper */
 .stats {
   display: flex;
   gap: 50px;
   justify-content: flex-end;
-  margin-top: 50px;
+  margin-top: 0; /* 👈 վերևից ավել տեղ չի թողնում */
   margin-left: 120px;
   flex-wrap: wrap;
 }
@@ -438,10 +455,13 @@ ul li {
   text-align: center;
   font-size: 48px;
   font-weight: 700;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   letter-spacing: 1px;
-  margin-left: 300px;
+  margin-left: 500px;
 }
+
+
+
 
 @media (max-width: 1024px) {
   .stats {
@@ -449,6 +469,9 @@ ul li {
     margin-left: 0;
     gap: 30px;
   }
+
+
+  
 
   .stat-card {
     padding: 25px 40px;
@@ -1417,7 +1440,6 @@ textarea.form-control {
     font-size: 2.8rem;
     color: white;
     margin-bottom: 20px;
-margin-left: 450px;    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     line-height: 1.2;
     margin-top: 20px
     
@@ -1668,7 +1690,6 @@ margin-left: 450px;    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   margin-left: -15px;
 
 }
-/* Services page */
 .service-intro-section {
   padding: 60px 0;
 }
@@ -1985,4 +2006,172 @@ margin-left: 450px;    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     width: 100%;
     height: auto;
   }
+}
+.about-header {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.about-header h1 {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 900;
+  font-size: 36px;
+  letter-spacing: -2%;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.about-header p {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 400;
+  font-size: 23px;
+  letter-spacing: -2%;
+  color: #ffffffd9;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.top-info-section {
+  position: relative;
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
+
+.info-grid-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  max-width: 950px;
+  justify-items: center;
+  position: relative;
+  z-index: 2;
+  gap: 0px;
+}
+
+.info-card {
+  width: 450px;
+  max-width: 450px;
+  height: 400px;
+  padding: 25px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0;
+}
+
+.info-card:nth-child(1) {
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 63% 45%, 63% 68%, 0 68%);
+  z-index: 4;
+}
+.info-card:nth-child(2) {
+  clip-path: polygon(5% 0, 100% 0, 100% 68%, 35% 68%, 35% 45%, 5% 45%);
+  z-index: 3;
+}
+.info-card:nth-child(3) {
+  clip-path: polygon(0 0, 63% 0, 63% 35%, 98% 35%, 98% 70%, 0 70%);
+  transform: translateY(-115px);
+  z-index: 2;
+}
+.info-card:nth-child(4) {
+  clip-path: polygon(35% 0, 100% 0, 100% 70%, 5% 70%, 5% 35%, 35% 35%);
+  transform: translateY(-115px);
+  z-index: 1;
+}
+
+.info-title {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 50px auto 15px auto;
+  text-align: center;
+}
+
+.info-desc {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: #ffffffd9;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.center-image {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.center-image img {
+  width: 320px;
+  height: 220px;
+  border-radius: 24px;
+  object-fit: cover;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  opacity: 1;
+}
+
+
+@media (max-width: 768px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .info-card {
+    transform: translateY(0) !important;
+  }
+  .center-image {
+    position: static;
+    transform: none;
+    margin-top: 20px;
+  }
+}
+
+
+
+
+.cta-info .cta-button.rbj {
+  background: linear-gradient(135deg, #78D352);
+  color: #fff;
+  
+}
+
+.cta-info .cta-button.rbj {
+  position: relative;
+  left: -10px;
+}
+
+
+
+.hero.glass .cta-button.button-bottom.rbj {
+  position: relative;
+  left: -10px;
+    background: linear-gradient(135deg, #FD7400);
+
+}
+
+.hero.glass .cta-button.button-bottom.rbjj {
+  position: relative;
+  left: -10px;
+    background: linear-gradient(135deg, #28BFC6);
+
 }
